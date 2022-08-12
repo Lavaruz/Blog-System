@@ -1,0 +1,40 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    border-bottom: 1px solid black;
+}
+
+.main{
+    padding: 2% 5%;
+}
+
+.blog{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.blog-card{
+    /* width: 300px; */
+    border: 1px solid black;
+    padding: 1%;
+    cursor: pointer;
+}
+.blog-card .title-card{
+    margin-bottom: 2px;
+}
+.blog-card .date-card{
+    color: rgb(80, 80, 80);
+    margin: 1px 0;
+}
+.blog-card .content-card{
+    margin-top: 10px;
+}
+
