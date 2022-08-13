@@ -1,4 +1,4 @@
-const submitModel = require('./submit.mongo')
+const submitModel = require('./news.mongo')
 
 const news = {
     title: 'Harga Mie Instan Naik 3 Kali Lipat?',
@@ -24,8 +24,6 @@ const news = {
 async function saveNews(data){
     await submitModel.create(data)
 }
-
-saveNews(news)
 
 module.exports = {
     saveNews

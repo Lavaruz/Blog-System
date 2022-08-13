@@ -2,6 +2,11 @@ body{
     padding: 0;
     margin: 0;
 }
+
+a{
+    text-decoration: none; /* no underline */
+}
+
 .header{
     background-color: white;
     display: flex;
@@ -23,6 +28,7 @@ body{
 
 .blog-card{
     /* width: 300px; */
+    color: black;
     border: 1px solid black;
     padding: 1%;
     cursor: pointer;

@@ -1,0 +1,20 @@
+body{
+    padding: 3% 20%;
+}
+
+.main .head-date{
+    color: rgb(109, 109, 109);
+    margin: 0;
+}
+
+.main .head-title{
+    margin: 0;
+}
+
+.content .content-mksa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20%;
+    text-align: center;
+}

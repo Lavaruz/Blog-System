@@ -1,3 +1,3 @@
-var utc = new Date().toLocaleDateString('id')
+let a = 'Assami gg muzaki gg'
 
-console.log(utc);
+console.log(a.replaceAll('gg', 'adalah'));

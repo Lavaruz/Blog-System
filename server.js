@@ -4,6 +4,8 @@ const app = express()
 var bodyParser = require('body-parser')
 
 const {submitRouter} = require('./src/route/submit/submit.route')
+const {homeRouter} = require('./src/route/home/home.route')
+const {blogRouter} = require('./src/route/blog/blog.route')
 const {databaseConnect} = require('./services/mongo')
 
 const PORT = process.env.PORT || 3000
@@ -13,12 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs')
 
 
-app.get('/', (req,res)=>{
-    res.render('home', {
-        name: 'Assami Muzaki'
-    })
-})
+app.use('/', homeRouter)
 app.use('/submit', submitRouter)
+app.use('/blog', blogRouter)
 
 app.get('/signin', (req,res)=>{
     res.render('signin')

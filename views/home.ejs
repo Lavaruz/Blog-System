@@ -18,31 +18,15 @@
             <h1>Popular News</h1>
         </div>
         <div class="blog">
-            <div class="blog-card">
-                <h3 class="title-card">Featured Post</h3>
-                <p class="date-card">Nov 12</p>
-                <p class="content-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dignissimos.</p>
-            </div>
-            <div class="blog-card">
-                <h3 class="title-card">Featured Post</h3>
-                <p class="date-card">Nov 12</p>
-                <p class="content-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dignissimos.</p>
-            </div>
-            <div class="blog-card">
-                <h3 class="title-card">Featured Post</h3>
-                <p class="date-card">Nov 12</p>
-                <p class="content-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dignissimos.</p>
-            </div>
-            <div class="blog-card">
-                <h3 class="title-card">Featured Post</h3>
-                <p class="date-card">Nov 12</p>
-                <p class="content-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dignissimos.</p>
-            </div>
-            <div class="blog-card">
-                <h3 class="title-card">Featured Post</h3>
-                <p class="date-card">Nov 12</p>
-                <p class="content-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dignissimos.</p>
-            </div>
+            <% docs.forEach((doc)=>{ %>
+                <a href="blog/<%= doc._id %> ">
+                    <div class="blog-card">
+                        <h3 class="title-card"><%= doc.title %> </h3>
+                        <p class="date-card"><%= doc.date %></p>
+                        <p class="content-card"><%= doc.mksa %></p>
+                    </div>
+                </a>
+            <% }) %> 
         </div>
     </div>
 </body>
