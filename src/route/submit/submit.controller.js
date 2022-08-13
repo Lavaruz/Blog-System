@@ -1,4 +1,4 @@
-const {saveNews} = require('../../model/submit.model')
+const {addNewNews} = require('../../model/submit.model')
 
 function getSubmit(req,res){
     res.render('submit')
@@ -6,8 +6,8 @@ function getSubmit(req,res){
 
 async function postSubmit(req,res){
     const body = req.body
-    console.log(body);
-    // await saveNews(body);
+    await addNewNews(body)
+    res.redirect('/')
 }
 
 module.exports = {

@@ -1,3 +1,18 @@
 body{
-    padding: 10% 25%;
+    padding: 3% 25%;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+}
+
+.mksa{
+    margin: 25px 0;
+}
+
+.mksa-label{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }

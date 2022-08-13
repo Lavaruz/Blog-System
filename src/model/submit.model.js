@@ -1,4 +1,4 @@
-const submitModel = require('./news.mongo')
+const newsModel = require('./news.mongo')
 
 const news = {
     title: 'Harga Mie Instan Naik 3 Kali Lipat?',
@@ -22,9 +22,17 @@ const news = {
 }
 
 async function saveNews(data){
-    await submitModel.create(data)
+    await newsModel.create(data)
+}
+
+async function addNewNews(data){
+    const newData = Object.assign(data, {
+        date: new Date().toLocaleDateString('id'),
+        autor: 'Assami Muzaki'
+    })
+    saveNews(newData)
 }
 
 module.exports = {
-    saveNews
+    addNewNews
 }

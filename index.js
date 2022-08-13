@@ -1,3 +1,5 @@
-let a = 'Assami gg muzaki gg'
+const str = 'first\nsecond\r\nthird';
 
-console.log(a.replaceAll('gg', 'adalah'));
+const result = str.split(/\r?\n/);
+
+console.log(result);
