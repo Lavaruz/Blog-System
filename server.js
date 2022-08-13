@@ -17,7 +17,9 @@ const {databaseConnect} = require('./services/mongo')
 const PORT = process.env.PORT || 3000
 const config = {
     CLIENT_ID: process.env.CLIENT_ID,
-    CLIENT_SECRET: process.env.CLIENT_SECRET
+    CLIENT_SECRET: process.env.CLIENT_SECRET,
+    COOKIES_KEY1: process.env.COOKIES_KEY1,
+    COOKIES_KEY2: process.env.COOKIES_KEY2
 }
 
 passport.use(new GoogleStrategy({
@@ -32,6 +34,13 @@ passport.use(new GoogleStrategy({
 ));
 
 app.use(helmet())
+app.use(cookieSession({
+    name: 'GOOGLE_SES_AUTH',
+    maxAge: 1000*60*60*24,
+    keys:[config.COOKIES_KEY1, config.COOKIES_KEY2]
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs')
@@ -48,12 +57,25 @@ app.get('/auth/google',
     passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback', 
-    passport.authenticate('google', { failureRedirect: '/', session:false }),
+    passport.authenticate('google', { failureRedirect: '/' }),
     (req, res) => {
         // Successful authentication, redirect home.
         res.redirect('/');
     }
 );
+
+
+passport.serializeUser((user,done)=>{
+    const data = {
+        name: user.displayName,
+        id: user.id
+    }
+    done(null, data)
+})
+passport.deserializeUser((user,done)=>{
+    done(null, user)
+})
+
 
 async function startServer(){
     await databaseConnect()

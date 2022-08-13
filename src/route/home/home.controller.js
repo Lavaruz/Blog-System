@@ -5,6 +5,7 @@ async function getHome(req,res){
     res.render('home', {
         docs: docs
     })
+    console.log(req.user);
 }
 
 module.exports = {
