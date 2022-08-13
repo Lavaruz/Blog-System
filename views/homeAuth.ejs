@@ -10,14 +10,15 @@
 <body>
     <div class="header">
         <h2>Lavaruz Blog</h2>
-        <a href="/signin">
-            <button>Sign In</button>
-        </a>
+        <form action="/" method="post">
+            <button type="submit">Logout</button>
+        </form>
     </div>
     <div class="main">
-        <div class="main-signup">
-            <p>Ingin menulis berita kamu sendiri, mari daftarkan diri terlebih dahulu</p>
-            <a href="/signin"><button>Sign In</button></a>
+        <div class="main-submit">
+            <h2>Welcome Back <%= name %> </h2>
+            <p>Now you can create your own news</p>
+            <a href="/submit"><button>Create News</button></a>
         </div>
         <div class="title">
             <h1>Recent News</h1>

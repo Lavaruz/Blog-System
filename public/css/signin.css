@@ -51,6 +51,7 @@ button:hover {
     margin: 20px 35%;
 }
 .social-google-button{
+    padding: 5%;
     background-color: rgb(138, 0, 0);
     color: #eaeaea;
 }

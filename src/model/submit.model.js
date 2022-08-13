@@ -1,5 +1,7 @@
 const newsModel = require('./news.mongo')
 
+const DEFAULT_LATEST_ID = 0
+
 const news = {
     title: 'Harga Mie Instan Naik 3 Kali Lipat?',
     mksa: 'Intinya… Menteri Pertanian Syahrul Yasin Limpo mengungkapkan bakal ada dampak besar dari perang antara Rusia dan Ukraina, salah satunya adalah kenaikan harga mie instan 3 (tiga) kali lipat.',
@@ -18,21 +20,39 @@ const news = {
     
     Untuk saat ini harga mie instan di E-commerce dijual mulai dari Rp2.000-Rp3.050 tergantung jenis mie dan tokonya. Sedangkan untuk harga mie instan di Indomaret mulai dari Rp3.000 ke atas.`,
     date: new Date().toLocaleDateString('id'),
-    autor: 'Assami Muzaki'
+    autor: 'Assami Muzaki',
+    newsId: 1
+}
+
+async function firstNews(data){
+    const allDocs = await newsModel.find()
+    if (!allDocs){
+        return saveNews(data)
+    }
+    return
 }
 
 async function saveNews(data){
     await newsModel.create(data)
 }
 
+async function getLatestDoc(){
+    const allDocs = await newsModel.find()
+    if (!allDocs){
+        return DEFAULT_LATEST_ID
+    }
+    return allDocs.length; 
+}
+
 async function addNewNews(data){
     const newData = Object.assign(data, {
         date: new Date().toLocaleDateString('id'),
-        autor: 'Assami Muzaki'
+        autor: 'Assami Muzaki',
+        newsId: await getLatestDoc() + 1
     })
     saveNews(newData)
 }
 
 module.exports = {
-    addNewNews
+    addNewNews,
 }

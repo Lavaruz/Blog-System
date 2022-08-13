@@ -21,6 +21,10 @@ const submitSchema = new mongoose.Schema({
         type:String,
         required: true 
     },
+    newsId:{
+        type:Number,
+        required:true
+    }
 })
 
 module.exports = mongoose.model('New',submitSchema)

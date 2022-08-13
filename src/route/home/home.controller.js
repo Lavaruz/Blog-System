@@ -2,12 +2,24 @@ const {getAllDocs} = require('../../model/home.model')
 
 async function getHome(req,res){
     const docs = await getAllDocs();
-    res.render('home', {
-        docs: docs
-    })
-    console.log(req.user);
+    if (req.isAuthenticated()){
+        res.render('homeAuth',{
+            docs:docs,
+            name:req.user.name
+        })
+    }else{
+        res.render('home', {
+            docs: docs
+        })
+    }
+}
+
+function logout(req,res){
+    req.logout()
+    res.redirect('/')
 }
 
 module.exports = {
-    getHome
+    getHome,
+    logout
 }

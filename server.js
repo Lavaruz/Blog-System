@@ -9,6 +9,7 @@ const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const cookieSession = require('cookie-session')
 
+const {firstNews, news} = require('./src/model/submit.model')
 const {submitRouter} = require('./src/route/submit/submit.route')
 const {homeRouter} = require('./src/route/home/home.route')
 const {blogRouter} = require('./src/route/blog/blog.route')
@@ -28,7 +29,6 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log('Google Profile :', profile);
     return done(null, profile)
   }
 ));

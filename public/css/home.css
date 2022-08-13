@@ -31,12 +31,11 @@ a{
 
 .blog{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     gap: 10px;
 }
 
 .blog-card{
-    /* width: 300px; */
     color: black;
     border: 1px solid black;
     padding: 1%;
@@ -53,3 +52,16 @@ a{
     margin-top: 10px;
 }
 
+.main-submit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 0;
+    background-color: antiquewhite;
+}
+.main-submit h2{
+    margin-bottom: 0;
+}
+.main-submit p{
+    margin-top: 5px;
+}
