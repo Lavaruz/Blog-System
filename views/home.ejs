@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
-    <title>Blog System</title>
-</head>
-<body>
-    <div class="header">
-        <h2>Lavaruz Blog</h2>
-        <a href="/signin">
-            <button>Sign In</button>
-        </a>
-    </div>
+<%- include('template/header') %> 
+
     <div class="main">
-        <div class="main-signup">
-            <p>Ingin menulis berita kamu sendiri, mari daftarkan diri terlebih dahulu</p>
-            <a href="/signin"><button>Sign In</button></a>
-        </div>
+
+        <% if(!user){ %> 
+            <div class="main-signup">
+                <p>Ingin menulis berita kamu sendiri, mari daftarkan diri terlebih dahulu</p>
+                <a href="/auth/signin"><button>Sign In</button></a>
+            </div>
+        <% }else{ %> 
+            <div class="main-submit">
+                <h2>Welcome Back <%= user.name %> </h2>
+                <p>Now you can create your own news</p>
+                <a href="/submit"><button>Create News</button></a>
+            </div>
+        <% } %> 
+
         <div class="title">
             <h1>Recent News</h1>
         </div>
@@ -34,5 +30,5 @@
             <% }) %> 
         </div>
     </div>
-</body>
-</html>
+
+<%- include('template/footer') %> 

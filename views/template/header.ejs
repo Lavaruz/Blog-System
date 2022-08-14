@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Blog System</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Lavaruz Blog</h2>
+        <% if(!user){ %> 
+            <a href="/auth/signin">
+                <button>Sign In</button>
+            </a>
+        <% }else{ %> 
+            <form action="/" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        <% } %> 
+    </div>
