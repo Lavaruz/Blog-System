@@ -2,6 +2,7 @@ const path = require('path')
 require('dotenv').config({path: path.resolve(__dirname, '../.env')})
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const userModel = require('../src/model/user.mongo')
 
 const config = {
     CLIENT_ID: process.env.CLIENT_ID,
@@ -9,13 +10,10 @@ const config = {
 }
 
 passport.serializeUser((user,done)=>{
-    const data = {
-        name: user.displayName,
-        id: user.id
-    }
-    done(null, data)
+    done(null, user.id)
 })
-passport.deserializeUser((user,done)=>{
+passport.deserializeUser(async(userId,done)=>{
+    const user = await userModel.findById(userId,'-__v')
     done(null, user)
 })
 
@@ -25,7 +23,32 @@ passport.use(new GoogleStrategy({
     clientSecret: config.CLIENT_SECRET,
     callbackURL: "/auth/google/callback"
   },
-  function(accessToken, refreshToken, profile, done) {
-    return done(null, profile)
+  async function(accessToken, refreshToken, profile, done) {
+    // const user = await userModel.findOne({
+    //     googleId: profile.id
+    // })
+    // if(user){
+    //     done(null, user)
+    // }else{
+    //     const newDoc = await userModel.create({
+    //         name: profile._json.name,
+    //         googleId: profile.id,
+    //         image: profile._json.picture,
+    //         email: profile._json.email
+    //     })
+    //     done(null, newDoc)
+    // }
+    const user = await userModel.findOneAndUpdate({
+        googleId:profile.id
+    },{
+        name: profile._json.name,
+        googleId: profile.id,
+        image: profile._json.picture,
+        email: profile._json.email
+    },{
+        upsert: true,
+        new: true
+    })
+    done(null,user)
   }
 ));
