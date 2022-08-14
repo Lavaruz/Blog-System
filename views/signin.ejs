@@ -11,17 +11,17 @@
     <div class="title">
         <h2>Login to Lavaruz Blog</h2>
     </div>
-    <form action="#" method="">
+    <form action="/auth/signin" method="post">
         <div class="container">
             <label>Username : </label>   
             <input type="text" placeholder="Not function yet, please use google oauth" name="username" required>  
             <label>Password : </label>   
             <input type="password" placeholder="Not function yet, please use google oauth" name="password" required>  
-            <button type="submit">Login</button> 
-            <div class="add-on">
-                <label><input type="checkbox" name="checkbox" value="value">Remember me</label>
-                <a href="#">Forgot Password? </a>   
-            </div>  
+            <button class="button-register" type="submit">Login</button> 
+            <div class="register">
+                <p>Don't have an account yet?</p>
+                <a href="/auth/signup">Register</a>
+            </div>
         </div>
     </form>
     <a href="/auth/google" class="social-google-link">

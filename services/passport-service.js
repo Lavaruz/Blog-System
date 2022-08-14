@@ -13,8 +13,9 @@ passport.serializeUser((user,done)=>{
     done(null, user.id)
 })
 passport.deserializeUser(async(userId,done)=>{
-    const user = await userModel.findById(userId,'-__v')
-    done(null, user)
+    // const user = await userModel.findById(userId,'-__v')
+    // done(null, user)
+    done(null, userId)
 })
 
 

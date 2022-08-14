@@ -1,12 +1,14 @@
 const {getAllDocs} = require('../../model/home.model')
+const userModel = require('../../model/user.mongo')
+
 
 async function getHome(req,res){
     const docs = await getAllDocs();
+    const user = await userModel.findById(req.user)
     res.render('home', {
-        docs: docs,
-        user: req.user,
+        news: docs,
+        user: user,
     })
-    console.log(req.user);
 }   
 
 function logout(req,res){

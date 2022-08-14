@@ -22,7 +22,9 @@ const config = {
     COOKIES_KEY2: process.env.COOKIES_KEY2
 }
 
-app.use(helmet())
+// app.use(helmet({
+//     contentSecurityPolicy: false,
+//   }))
 app.use(cookieSession({
     name: 'GOOGLE_SES_AUTH',
     maxAge: 1000*60*60*24,

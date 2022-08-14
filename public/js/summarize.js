@@ -19,6 +19,8 @@ button.addEventListener('click', ()=>{
 	content = document.getElementById("content").value
 	output = query({
 		"inputs": content,
-	})
-	console.log(output);
+	}).then((response) => {
+		const summary = response[0].summary_text;
+		mksa.innerHTML = summary;
+	});
 })

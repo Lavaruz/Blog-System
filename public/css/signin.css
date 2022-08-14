@@ -39,7 +39,7 @@ button:hover {
     justify-content: space-around;
 }
 .container {   
-    margin: 30px 35% 0;
+    margin: 10px 35% 0;
     padding: 25px;
     border: 1px solid black;
 }  
@@ -58,4 +58,23 @@ button:hover {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+.register{
+    margin: 18px 0 3px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.register p{
+    margin: 0;
+}
+.button-register{
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    transition: .3s;
+}
+.button-register:hover{
+    background-color: rgb(44, 44, 44);
 }

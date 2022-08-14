@@ -21,13 +21,12 @@ a{
     padding: 2% 5%;
 }
 
-.main-signup{
+.main-signin{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(201, 201, 201);
-    padding: 2%;
-    border-radius: 5%;
+    padding: 3%;
 }
 
 .blog{
@@ -65,4 +64,21 @@ a{
 }
 .main-submit p{
     margin-top: 5px;
+}
+
+.profile-image{
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+}
+.profile-image img{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logout{
+    display: flex;
+    gap: 20px;
 }

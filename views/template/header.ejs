@@ -15,8 +15,13 @@
                 <button>Sign In</button>
             </a>
         <% }else{ %> 
-            <form action="/" method="post">
-                <button type="submit">Logout</button>
-            </form>
+            <div class="logout">
+                <p>Logout =></p>
+                <a href="/logout">
+                    <div class="profile-image">
+                        <img src="<%= user.image %>" alt=""> 
+                    </div>
+                </a>
+            </div>
         <% } %> 
     </div>

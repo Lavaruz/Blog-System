@@ -3,7 +3,7 @@
     <div class="main">
 
         <% if(!user){ %> 
-            <div class="main-signup">
+            <div class="main-signin">
                 <p>Ingin menulis berita kamu sendiri, mari daftarkan diri terlebih dahulu</p>
                 <a href="/auth/signin"><button>Sign In</button></a>
             </div>
@@ -19,7 +19,7 @@
             <h1>Recent News</h1>
         </div>
         <div class="blog">
-            <% docs.forEach((doc)=>{ %>
+            <% news.forEach((doc)=>{ %>
                 <a href="blog/<%= doc._id %> ">
                     <div class="blog-card">
                         <h3 class="title-card"><%= doc.title %> </h3>
