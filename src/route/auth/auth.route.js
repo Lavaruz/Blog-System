@@ -4,7 +4,9 @@ const passport = require('passport')
 const authRouter = express.Router()
 
 authRouter.get('/signin', (req,res)=>{
-    res.render('signin')
+    res.render('signin',{
+        user: req.user
+    })
 })
 authRouter.get('/google',
     passport.authenticate('google', { scope: ['profile', 'email'] }));

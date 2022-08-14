@@ -1,5 +1,4 @@
-Body {  
-    font-family: Calibri, Helvetica, sans-serif;
+body {
     padding: 3% 0;
 }  
 
@@ -23,7 +22,7 @@ input[type=text], input[type=password] {
     margin: 8px 0;  
     padding: 12px 20px;   
     display: inline-block;   
-    border: 2px solid green;   
+    border: 1px solid black;   
     box-sizing: border-box;   
 }  
 button:hover {   
@@ -41,17 +40,22 @@ button:hover {
 }
 .container {   
     margin: 30px 35% 0;
-    padding: 25px;   
-    background-color: lightblue;  
+    padding: 25px;
+    border: 1px solid black;
 }  
 
 .social-google{
     display: flex;
     justify-content: center;
     margin: 20px 35%;
+    background-color: rgb(136, 0, 0);
+    transition: .3s;
 }
-.social-google-button{
-    padding: 5%;
-    background-color: rgb(138, 0, 0);
-    color: #eaeaea;
+.social-google:hover{
+    background-color: rgb(104, 0, 0);
+}
+.social-google-link{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }

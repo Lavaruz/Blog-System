@@ -4,7 +4,8 @@ async function getDocsById(req,res){
     const paramId = req.params.id
     let doc = await newsModel.findById(paramId)
     res.render('blog', {
-        doc: doc
+        doc: doc,
+        user: req.user
     })
 }
 
