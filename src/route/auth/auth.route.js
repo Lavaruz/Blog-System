@@ -12,31 +12,44 @@ authRouter.get('/signin', (req,res)=>{
         user: req.user
     })
 })
-authRouter.post('/signin',(req,res)=>{
-
+authRouter.post('/signin',async(req,res)=>{
+    const username = req.body.username
+    const user = await userModel.findOne({name: username})
+    if (!user){
+        res.redirect('/auth/signin')
+    }else{
+        await bcrypt.compare(req.body.password, user.password, (err,result)=>{
+            if(!result){
+                res.redirect('/auth/signin')
+            }else{
+                res.session.user = req.body.username
+                res.redirect('/')
+            }
+        })
+    }
 })
+
+
+
 
     // SIGNUP
 authRouter.get('/signup', (req,res)=>{
     res.render('register')
 })
-authRouter.post('/signup', async(req,res)=>{
+authRouter.post('/signup', async(req,res, next)=>{
     const hashPassword = await bcrypt.hash(req.body.password, 10)
     const userFind = await userModel.findOne({
         name: req.body.username
     })
     if(userFind){
-        console.log('user already exist');
+        res.redirect('/auth/signin')
     }else{
-        console.log('create user');
         req.session.user = req.body.username
-        console.log(req.user);
-        // await userModel.create({
-        //     name: req.body.username,
-        //     password: hashPassword
-        // })
-        // req.user.name = req.body.username
-        // res.redirect('/')
+        await userModel.create({
+            name: req.body.username,
+            password: hashPassword
+        })
+        res.redirect('/')
     }
 })
 

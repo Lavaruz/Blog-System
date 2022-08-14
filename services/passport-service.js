@@ -10,12 +10,12 @@ const config = {
 }
 
 passport.serializeUser((user,done)=>{
-    done(null, user.id)
+    done(null, user.name)
 })
-passport.deserializeUser(async(userId,done)=>{
+passport.deserializeUser(async(userName,done)=>{
     // const user = await userModel.findById(userId,'-__v')
     // done(null, user)
-    done(null, userId)
+    done(null, userName)
 })
 
 
