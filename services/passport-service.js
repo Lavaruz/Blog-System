@@ -34,7 +34,6 @@ passport.use(new GoogleStrategy({
         googleId: profile.id,
         image: profile._json.picture,
         email: profile._json.email,
-        password: await bcrypt.hash('-aoisdhjfdio-asjfdh1029/-',10)
     },{
         upsert: true,
         new: true
@@ -47,7 +46,7 @@ passport.use(new GoogleStrategy({
 passport.use(new LocalStrategy(
     async function(username, password, done) {
         const User = await userModel.findOne({ name: username });
-        if (!User){
+        if (!User.password){
             done(null, false, {message: 'username not found !'});
         } 
         try{

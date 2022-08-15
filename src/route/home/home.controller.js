@@ -6,6 +6,7 @@ async function getHome(req,res){
         news: docs,
         user: req.user,
     })
+    console.log(req.user);
 }   
 
 function logout(req,res){
