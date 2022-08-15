@@ -13,8 +13,10 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 5%;
-    border-bottom: 1px solid black;
+}
+.cont{
+    
+    padding: 10px 3%;
 }
 
 .main{
@@ -31,7 +33,7 @@ a{
 
 .blog{
     display: grid;
-    /* grid-template-rows: repeat(2, 1fr); */
+    /* grid-template-columns: repeat(2, 1fr); */
     gap: 10px;
 }
 

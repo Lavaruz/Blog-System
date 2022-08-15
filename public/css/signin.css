@@ -1,5 +1,5 @@
 body {
-    padding: 3% 0;
+    padding: 3% 0 0;
 }  
 
 .title{
@@ -79,29 +79,9 @@ button:hover {
     background-color: rgb(44, 44, 44);
 }
 
-.error-flash{
+.back{
+    margin: 30px;
     display: flex;
     justify-content: center;
-    position: fixed;
-    width: 400px;
-    top: 10px;
-    left: 50%;
-    margin-left: -200px; /* Negative half of width. */
-    background-color: rgba(255, 0, 0, .7);
-    border-radius: 5px;
-    animation: 3.5s fadeIn;
-    visibility: visible;
-    animation-fill-mode: forwards;
+    gap: 30px;
 }
-@keyframes fadeIn {
-    80% {
-        background-color: rgba(255, 0, 0, .7);
-        color: black;
-        visibility: visible;
-    }
-    100% {
-        background-color: rgba(255, 0, 0, 0);
-        color: transparent;
-        visibility: hidden;
-    }
-  }

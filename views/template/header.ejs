@@ -8,20 +8,23 @@
     <title>Blog System</title>
 </head>
 <body>
-    <div class="header">
-        <a href="/"><h2>Lavaruz Blog</h2></a>
-        <% if(!user){ %> 
-            <a href="/auth/signin">
-                <button>Sign In</button>
-            </a>
-        <% }else{ %> 
-            <div class="logout">
-                <p>Logout =></p>
-                <a href="/logout">
-                    <div class="profile-image">
-                        <img src="<%= user.image %>"> 
-                    </div>
+    <div class="cont">
+        <div class="header">
+            <a href="/"><h2>Lavaruz Blog</h2></a>
+            <% if(!user){ %> 
+                <a href="/auth/signin">
+                    <button>Sign In</button>
                 </a>
-            </div>
-        <% } %> 
+            <% }else{ %> 
+                <div class="logout">
+                    <p>Logout =></p>
+                    <a href="/logout">
+                        <div class="profile-image">
+                            <img src="<%= user.image %>"> 
+                        </div>
+                    </a>
+                </div>
+            <% } %> 
+        </div>
+        <hr>
     </div>

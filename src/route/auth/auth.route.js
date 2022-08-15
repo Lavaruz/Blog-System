@@ -7,6 +7,7 @@ const {getSignIn, getSignUp} = require('./auth.controller')
 
 const authRouter = express.Router()
 
+
     // SIGNIN
 authRouter.get('/signin',getSignIn)
 authRouter.post('/signin',passport.authenticate('local', {
@@ -29,7 +30,9 @@ authRouter.post('/signup', async(req,res)=>{
             name: req.body.username,
             password: hashPassword,
         },{upsert:true})
-        res.redirect('/auth/signin')
+        passport.authenticate('local')(req,res,()=>{
+            res.redirect('/')
+        })
     }catch{
         res.redirect('/auth/signup')
     }

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signin.css">
     <title>Signup</title>
 </head>
 <body>
-    <link rel="stylesheet" href="/css/signin.css">
     <div class="title">
         <h2>Register to Lavaruz Blog</h2>
     </div>
@@ -20,5 +20,9 @@
             <button class="button-register" type="submit">Create an Account</button> 
         </div>
     </form>
-</body>
-</html>
+    <div class="back">
+        <a href="/auth/signin" class="back-login">Sign In</a>
+        <a href="/" class="back-home">Home</a>
+    </div>
+
+<%- include('template/footer') %> 
