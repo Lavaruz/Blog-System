@@ -24,14 +24,6 @@ const news = {
     newsId: 1
 }
 
-async function firstNews(data){
-    const allDocs = await newsModel.find()
-    if (!allDocs){
-        return saveNews(data)
-    }
-    return
-}
-
 async function saveNews(data){
     await newsModel.create(data)
 }
@@ -47,7 +39,6 @@ async function getLatestDoc(){
 async function addNewNews(data){
     const newData = Object.assign(data, {
         date: new Date().toLocaleDateString('id'),
-        autor: 'Assami Muzaki',
         newsId: await getLatestDoc() + 1
     })
     saveNews(newData)

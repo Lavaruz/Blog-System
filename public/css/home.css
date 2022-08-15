@@ -42,11 +42,14 @@ a{
     cursor: pointer;
 }
 .blog-card .title-card{
-    margin-bottom: 2px;
+    margin: 2px 0;
 }
 .blog-card .date-card{
     color: rgb(80, 80, 80);
     margin: 1px 0;
+}
+.blog-card .autor-card{
+    margin-top: 0;
 }
 .blog-card .content-card{
     margin-top: 10px;

@@ -6,6 +6,7 @@ function getSubmit(req,res){
 
 async function postSubmit(req,res){
     const body = req.body
+    body.autor = req.user.name
     await addNewNews(body)
     res.redirect('/')
 }

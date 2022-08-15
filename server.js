@@ -8,6 +8,7 @@ var bodyParser = require('body-parser')
 const helmet = require('helmet')
 const passport = require('passport')
 const cookieSession = require('cookie-session')
+const flash = require('connect-flash')
 
 const {firstNews, news} = require('./src/model/submit.model')
 const {submitRouter} = require('./src/route/submit/submit.route')
@@ -34,6 +35,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(flash())
 app.set('view engine', 'ejs')
 
 

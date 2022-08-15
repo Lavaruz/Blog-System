@@ -22,8 +22,9 @@
             <% news.forEach((doc)=>{ %>
                 <a href="blog/<%= doc._id %> ">
                     <div class="blog-card">
-                        <h3 class="title-card"><%= doc.title %> </h3>
                         <p class="date-card"><%= doc.date %></p>
+                        <h3 class="title-card"><%= doc.title %> </h3>
+                        <p class="autor-card">Created by: <%= doc.autor %> </p>
                         <p class="content-card"><%= doc.mksa %></p>
                     </div>
                 </a>
