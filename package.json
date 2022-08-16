@@ -4,9 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "serve -s build",
-    "build": "node server.js",
-    "heroku-postbuild": "npm run build"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +22,6 @@
     "mongoose": "^6.5.2",
     "passport": "^0.5.3",
     "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0",
-    "serve": "^14.0.1"
+    "passport-local": "^1.0.0"
   }
 }
