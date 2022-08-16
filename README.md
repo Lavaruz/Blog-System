@@ -1,3 +1,6 @@
+## Deployed Link
+http://lavaruz-blog-system.herokuapp.com/
+
 ## Description
 This app has a function like a blog system where users can read and create their own blogs, but to create a blog the user is required to login/register first.
 
