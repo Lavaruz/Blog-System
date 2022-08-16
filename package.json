@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "serve -s build",
+    "build": "node server.js",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
