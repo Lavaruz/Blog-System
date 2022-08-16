@@ -15,7 +15,6 @@ const {authRouter} = require('./src/route/auth/auth.route')
 const {databaseConnect} = require('./services/mongo')
 
 const config = {
-    PORT: process.env.PORT || 3000,
     COOKIES_KEY1: process.env.COOKIES_KEY1,
     COOKIES_KEY2: process.env.COOKIES_KEY2
 }
@@ -38,9 +37,14 @@ app.use('/blog', blogRouter)
 app.use('/auth', authRouter)
 
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
 
 async function startServer(){
     await databaseConnect()
-    app.listen(config.PORT, () => console.log(`server run at port ${config.PORT}`))
+    app.listen(port, () => console.log(`server run at port ${port}`))
 }
 startServer()
