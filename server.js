@@ -5,12 +5,9 @@ const express = require('express')
 const path = require('path')
 const app = express()
 var bodyParser = require('body-parser')
-const helmet = require('helmet')
 const passport = require('passport')
 const cookieSession = require('cookie-session')
-const flash = require('connect-flash')
 
-const {firstNews, news} = require('./src/model/submit.model')
 const {submitRouter} = require('./src/route/submit/submit.route')
 const {homeRouter} = require('./src/route/home/home.route')
 const {blogRouter} = require('./src/route/blog/blog.route')
@@ -23,9 +20,6 @@ const config = {
     COOKIES_KEY2: process.env.COOKIES_KEY2
 }
 
-// app.use(helmet({
-//     contentSecurityPolicy: false,
-//   }))
 app.use(cookieSession({
     name: 'GOOGLE_SES_AUTH',
     maxAge: 1000*60*60*24,
@@ -35,7 +29,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(flash())
 app.set('view engine', 'ejs')
 
 
