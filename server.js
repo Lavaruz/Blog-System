@@ -14,15 +14,15 @@ const {blogRouter} = require('./src/route/blog/blog.route')
 const {authRouter} = require('./src/route/auth/auth.route')
 const {databaseConnect} = require('./services/mongo')
 
-const config = {
-    COOKIES_KEY1: process.env.COOKIES_KEY1,
-    COOKIES_KEY2: process.env.COOKIES_KEY2
-}
+
+let COOKIES_KEY1= process.env.COOKIES_KEY1
+let COOKIES_KEY2= process.env.COOKIES_KEY2
+
 
 app.use(cookieSession({
     name: 'GOOGLE_SES_AUTH',
     maxAge: 1000*60*60*24,
-    keys:[config.COOKIES_KEY1, config.COOKIES_KEY2]
+    keys:[COOKIES_KEY1, COOKIES_KEY2]
 }))
 app.use(passport.initialize())
 app.use(passport.session())
