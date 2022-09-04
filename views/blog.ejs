@@ -1,19 +1,39 @@
 <%- include('template/header') %> 
 
     <link rel="stylesheet" href="/css/blog.css">
-    <div class="main">
-        <div class="head">
-            <p class="head-date"><%= doc.date %></p>
-            <h1 class="head-title"><%= doc.title %></h1>
-            <p class="head-autor">Created by: <%= doc.autor %></p>
-        </div>
-        <div class="content">
-            <div class="content-mksa">
-                <h4>MK;SA</h4>
-                <p><%= doc.mksa %></p>
+    <div class="main-blog">
+        <div class="article">
+            <div class="head">
+                <div class="head-info">
+                    <img src="/img/me.jpg" alt="" width="40px">
+                    <div class="head-info-data">
+                        <p class="head-autor">Created by: <%= doc.autor %></p>
+                        <p class="head-date"><%= doc.date %></p>
+                    </div>
+                </div>
+                <h1 class="head-title"><%= doc.title %></h1>
             </div>
-            <div class="content-main">
-                <p><%= doc.content %></p>
+            <div class="content">
+                <div class="content-mksa">
+                    <h4>MK;SA <br> (Males Kepanjangan Singkat Aja)</h4>
+                    <p>"<%= doc.mksa %>"</p>
+                </div>
+                <div class="content-main">
+                    <% content.forEach(line =>{ %>
+                        <p><%= line %></p>
+                    <%}) %>
+                </div>
+                <h1 class="article-end">. . .</h1>
+            </div>
+        </div>
+        <div class="autor-info">
+            <div class="autor-profile">
+                <img src="/img/me.jpg" alt="" width="150px">
+                <h3><%= doc.autor %> </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque et, laboriosam minima qui </p>
+                <form action="" method="post">
+                    <button>Follow</button>
+                </form>
             </div>
         </div>
     </div>
