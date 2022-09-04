@@ -100,14 +100,24 @@ a{
 
 .blog{
     display: grid;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .blog-card{
     color: black;
     position: relative;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr max-content;
+}
+.blog-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blog-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .blog-card .title-card{
     margin: 0;
@@ -121,7 +131,7 @@ a{
     font-size: .8rem;
 }
 .blog-card .content-card{
-    margin: .5rem 0;
+    margin: .7rem 0;
     color: rgb(87, 87, 87);
     font-size: .95rem;
 }
