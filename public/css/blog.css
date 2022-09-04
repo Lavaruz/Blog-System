@@ -10,6 +10,10 @@
     padding: 2rem 4rem;
     font-size: .9rem;
 }
+.article-img{
+    display: block;
+    margin: 2rem auto;
+}
 .head .head-info{
     display: flex;
     gap: .5rem;

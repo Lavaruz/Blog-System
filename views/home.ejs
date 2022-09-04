@@ -38,7 +38,7 @@
                             </div>
                             <a href="blog/<%= doc._id %> ">
                                 <div class="blog-img">
-                                    <img src="img/noimg.jpg" alt="" width="180px">
+                                    <img src="/img/<%= doc.imageURL %>" alt="" onerror=this.src="/img/noimg.jpg" width="180px" height="180px">
                                 </div>
                             </a>
                         </div>

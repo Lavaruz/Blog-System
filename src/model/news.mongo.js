@@ -24,6 +24,9 @@ const submitSchema = new mongoose.Schema({
     newsId:{
         type:Number,
         required:true
+    },
+    imageURL:{
+        type:String
     }
 })
 

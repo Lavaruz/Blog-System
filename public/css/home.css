@@ -113,6 +113,7 @@ a{
     position: relative;
     display: grid;
     grid-template-columns: 1fr max-content;
+    gap: 1.5rem;
 }
 .blog-img{
     display: flex;
