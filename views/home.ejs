@@ -1,35 +1,62 @@
 <%- include('template/header') %> 
 
+<% if(!user){ %> 
+    <div class="main-signin">
+        <h1>Stay curious.</h1>
+        <p>Ingin menulis beritamu sendiri?,<br>mari daftarkan diri untuk menerbitkan berita kerenmu</p>
+        <a href="/auth/signin"><button class="button-signin">Start writing</button></a>
+    </div>
+<% }else{ %> 
+    <div class="main-signin">
+        <h2>Welcome Back <%= user.name %> </h2>
+        <p>Now you can create your own news</p>
+        <a href="/submit"><button>Create News</button></a>
+    </div>
+<% } %> 
     <div class="main">
 
-        <% if(!user){ %> 
-            <div class="main-signin">
-                <p>Ingin menulis berita kamu sendiri, mari daftarkan diri terlebih dahulu</p>
-                <a href="/auth/signin"><button>Sign In</button></a>
-            </div>
-        <% }else{ %> 
-            <div class="main-submit">
-                <h2>Welcome Back <%= user.name %> </h2>
-                <p>Now you can create your own news</p>
-                <a href="/submit"><button>Create News</button></a>
-            </div>
-        <% } %> 
-
         <div class="title">
-            <h1>Recent News</h1>
+            <h5>>>> RECENT NEWS</h5>
         </div>
-        <div class="blog">
-            <% news.forEach((doc)=>{ %>
-                <a href="blog/<%= doc._id %> ">
-                    <div class="blog-card">
-                        <p class="date-card"><%= doc.date %></p>
-                        <h3 class="title-card"><%= doc.title %> </h3>
-                        <p class="autor-card">Created by: <%= doc.autor %> </p>
-                        <p class="content-card"><%= doc.mksa %></p>
-                    </div>
-                </a>
-            <% }) %> 
+
+        <div class="news">
+            <div class="blog">
+                <% news.forEach((doc)=>{ %>
+                        <div class="blog-card">
+                            <div class="blog-main">
+                                <p class="autor-card">Created by: <%= doc.autor %> </p>
+                                <a href="blog/<%= doc._id %> ">
+                                    <div class="content">
+                                        <h3 class="title-card"><%= doc.title %> </h3>
+                                        <p class="content-card"><%= doc.mksa %></p>
+                                    </div>
+                                </a>
+                                <div class="info-card">
+                                    <p class="date-card"><%= doc.date %></p>
+                                </div>
+                                <!-- <button class="delete-card">X</button> -->
+                            </div>
+                            <div class="blog-img">
+                                img
+                            </div>
+                        </div>
+                <% }) %> 
+            </div>
+            <div class="discover">
+                <h5>DISCOVER MORE OF WHAT MATTERS TO YOU</h5>
+                <div class="discover-topics">
+                    <button class="discover-topic">Technology</button>
+                    <button class="discover-topic">Health</button>
+                    <button class="discover-topic">Economoic</button>
+                    <button class="discover-topic">Game</button>
+                    <button class="discover-topic">Politics</button>
+                    <button class="discover-topic">Machine Learning</button>
+                </div>
+                <hr>
+                
+            </div>
         </div>
+
     </div>
 
 <%- include('template/footer') %> 

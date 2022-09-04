@@ -4,35 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="/css/signin.css">
     <title>SignIn</title>
 </head>
 <body>
-    <link rel="stylesheet" href="/css/signin.css">
-    <div class="title">
-        <h2>Login to Lavaruz Blog</h2>
-    </div>
-    <form action="/auth/signin" method="post">
-        <div class="container">
+    <div class="main">
+        <div class="title">
+            <h2>Join Lavaruz Blog</h2>
+        </div>
+        <form action="/auth/signin" method="post">
             <label>Username : </label>   
             <input type="text" placeholder="Enter your username" name="username" required>  
             <label>Password : </label>   
             <input type="password" placeholder="Enter your password" name="password" required>  
             <button class="button-register" type="submit">Login</button> 
             <div class="register">
-                <p>Don't have an account yet?</p>
-                <a href="/auth/signup">Register</a>
             </div>
+        </form>
+        <a href="/auth/google" class="social-google-link">
+            <div class="social-google">
+                <i class="uil uil-google icon-google"></i> 
+                <p>signin with google</p>
+            </div>
+        </a>
+    
+        
+        <div class="back">
+            <p>Don't have an account yet? <a href="/auth/signup">Register</a></p>
+            <a href="/" class="back-home">Back Home</a>
         </div>
-    </form>
-    <a href="/auth/google" class="social-google-link">
-        <div class="social-google">
-            <p>signin with google</p>
-        </div>
-    </a>
-
-    <div class="back">
-        <a href="/" class="back-home">Back Home</a>
     </div>
-
-
-<%- include('template/footer') %> 

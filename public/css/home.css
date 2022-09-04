@@ -1,6 +1,12 @@
+
 body{
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    color: rgb(20, 20, 20);
 }
 
 a{
@@ -9,14 +15,12 @@ a{
 }
 
 .header{
-    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.cont{
-    
-    padding: 10px 3%;
+.nav{
+    padding: 15px 5%;
 }
 
 .main{
@@ -24,37 +28,111 @@ a{
 }
 
 .main-signin{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: rgb(201, 201, 201);
-    padding: 3%;
+    padding: 6% 5%;
+    border: 1px solid black;
+    border-width: 1px 0;
 }
+.main-signin h1{
+    font-size: 6rem;
+    margin: .8rem 0;
+}
+.main-signin p{
+    font-size: 1.3rem;
+}
+.button-signin{
+    padding: .6rem 2.5rem;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.button-signin:hover{
+    background-color: black;
+}
+.nav-signin{
+    padding: .6rem 1.5rem;
+    background-color: transparent;
+    color: black;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid black;
+}
+.nav-signin:hover{
+    background-color: black;
+    color: white;
+}
+
+
+.main-submit h2{
+    margin-bottom: 0;
+}
+.main-submit p{
+    margin-top: 5px;
+}
+
+
+.news{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+}
+
+
+/* DISCOVER */
+
+
+.discover .discover-topics{
+    margin-bottom: 2rem;
+}
+.discover .discover-topic{
+    padding: .8rem;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid rgb(87, 87, 87);
+    margin: 2px 0rem;
+}
+
+
+/* BLOG */
 
 .blog{
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
-    gap: 10px;
+    gap: 3rem;
 }
 
 .blog-card{
     color: black;
-    border: 1px solid black;
-    padding: 1%;
-    cursor: pointer;
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 .blog-card .title-card{
-    margin: 2px 0;
+    margin: 0;
 }
 .blog-card .date-card{
     color: rgb(80, 80, 80);
     margin: 1px 0;
 }
 .blog-card .autor-card{
-    margin-top: 0;
+    margin: 0 0 1rem;
+    font-size: .8rem;
 }
 .blog-card .content-card{
-    margin-top: 10px;
+    margin: .5rem 0;
+    color: rgb(87, 87, 87);
+    font-size: .95rem;
+}
+.blog-card .info-card{
+    font-size: .8rem;
+}
+
+.delete-card{
+    position: absolute;
+    top: 0%;
+    right: 0;
 }
 
 .main-submit{
@@ -63,12 +141,6 @@ a{
     align-items: center;
     padding: 3% 0;
     background-color: antiquewhite;
-}
-.main-submit h2{
-    margin-bottom: 0;
-}
-.main-submit p{
-    margin-top: 5px;
 }
 
 .profile-image{

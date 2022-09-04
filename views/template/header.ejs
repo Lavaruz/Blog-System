@@ -8,12 +8,12 @@
     <title>Blog System</title>
 </head>
 <body>
-    <div class="cont">
+    <div class="nav">
         <div class="header">
             <a href="/"><h2>Lavaruz Blog</h2></a>
             <% if(!user){ %> 
                 <a href="/auth/signin">
-                    <button>Sign In</button>
+                    <button class="nav-signin">Get started</button>
                 </a>
             <% }else{ %> 
                 <div class="logout">
@@ -26,5 +26,4 @@
                 </div>
             <% } %> 
         </div>
-        <hr>
     </div>
