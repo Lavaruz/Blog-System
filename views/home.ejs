@@ -21,10 +21,10 @@
 
         <div class="news">
             <div class="blog">
-                <% news.forEach((doc)=>{ %>
+                <% news.forEach(doc=>{ %>
                         <div class="blog-card">
                             <div class="blog-main">
-                                <p class="autor-card">Created by: <%= doc.autor %> </p>
+                                <p class="autor-card">Created by: <%= doc.autor.name %> </p>
                                 <a href="blog/<%= doc._id %> ">
                                     <div class="content">
                                         <h3 class="title-card"><%= doc.title %> </h3>
@@ -38,7 +38,7 @@
                             </div>
                             <a href="blog/<%= doc._id %> ">
                                 <div class="blog-img">
-                                    <img src="/img/<%= doc.imageURL %>" alt="" onerror=this.src="/img/noimg.jpg" width="180px" height="180px">
+                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="180px" height="180px">
                                 </div>
                             </a>
                         </div>

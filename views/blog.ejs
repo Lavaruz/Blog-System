@@ -5,15 +5,15 @@
         <div class="article">
             <div class="head">
                 <div class="head-info">
-                    <img src="/img/me.jpg" alt="" width="40px">
+                    <img src="<%= doc.autor.image %>" alt="" width="40px">
                     <div class="head-info-data">
-                        <p class="head-autor">Created by: <%= doc.autor %></p>
+                        <p class="head-autor">Created by: <%= doc.autor.name %></p>
                         <p class="head-date"><%= doc.date %></p>
                     </div>
                 </div>
                 <h1 class="head-title"><%= doc.title %></h1>
             </div>
-            <img class="article-img" src="/img/<%= doc.imageURL %>" alt="">
+            <img class="article-img" src="/img/<%= doc.image.filename %>" alt="" width="80%">
             <div class="content">
                 <div class="content-mksa">
                     <h4>MK;SA <br> (Males Kepanjangan Singkat Aja)</h4>
@@ -27,14 +27,27 @@
                 <h1 class="article-end">. . .</h1>
             </div>
         </div>
-        <div class="autor-info">
-            <div class="autor-profile">
-                <img src="/img/me.jpg" alt="" width="150px">
-                <h3><%= doc.autor %> </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque et, laboriosam minima qui </p>
-                <form action="" method="post">
-                    <button>Follow</button>
-                </form>
+        <div class="autor">
+            <div class="autor-info">
+                <div class="autor-profile">
+                    <img src="<%= doc.autor.image %>" alt="" width="150px">
+                    <h3><%= doc.autor.name %> </h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque et, laboriosam minima qui </p>
+                    <form action="" method="post">
+                        <button>Follow</button>
+                    </form>
+                </div>
+                <!-- <div class="autor-more">
+                    <h5>More Article</h5>
+                    <div class="autor-more-news">
+                        <% docs.forEach(docc => { %>
+                            <div class="more-news-info">
+                                <h5><%= docc.title %> </h5>
+                            </div>
+                            <img src="/img/<%= docc.image.filename %> " alt="" onerror=this.src="/img/noimg.jpg" width="150">
+                        <%}) %> 
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>

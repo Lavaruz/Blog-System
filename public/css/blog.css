@@ -2,7 +2,7 @@
 .main-blog{
     /* padding: 3% 20%; */
     display: grid;
-    grid-template-columns: 3fr 1.3fr;
+    grid-template-columns: 3fr 1fr;
     gap: 4rem;
 }
 
@@ -55,18 +55,21 @@
 }
 
 
-.autor-info{
+.autor{
     border: 1px solid rgb(201, 201, 201);
     border-width: 0px 0px 0px 1px;
     padding: 2rem 2rem;
+}
+.autor-info{
+    position: sticky;
+    top: 2rem;
 }
 .autor-profile{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    position: sticky;
-    top: 2rem;
+    margin: 0 0 4rem;
 }
 .autor-profile img{
     border-radius: 100%;
@@ -76,10 +79,10 @@
     font-size: .9rem;
     color: rgb(105, 105, 105);
 }
-.autor-info h3{
+.autor h3{
     margin: 1rem 0 0;
 }
-.autor-info button{
+.autor button{
     padding: .7rem 1.3rem;
     background-color: black;
     color: white;

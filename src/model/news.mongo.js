@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const User = require('./user.mongo')
 
 const submitSchema = new mongoose.Schema({
     title: {
@@ -13,9 +14,9 @@ const submitSchema = new mongoose.Schema({
         type:String,
         required: true
     },
-    autor:{
-        type:String,
-        required: true 
+    autor:{ 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     date:{
         type:String,
@@ -25,8 +26,9 @@ const submitSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
-    imageURL:{
-        type:String
+    image:{
+        type:mongoose.SchemaTypes.Mixed,
+        default: ""
     }
 })
 

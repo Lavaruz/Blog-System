@@ -8,21 +8,19 @@
     <title>Signup</title>
 </head>
 <body>
-    <div class="title">
-        <h2>Register to Lavaruz Blog</h2>
-    </div>
-    <form action="/auth/signup" method="post">
-        <div class="container">
+    <div class="main">
+        <div class="title">
+            <h2>Join to Lavaruz Blog</h2>
+        </div>
+        <form action="/auth/signup" method="post">
             <label>Username : </label>   
             <input type="text" placeholder="Enter your Username" name="username" required>  
             <label>Password : </label>   
             <input type="password" placeholder="Enter your Password" name="password" required>  
             <button class="button-register" type="submit">Create an Account</button> 
+        </form>
+        <div class="back">
+            <p>Already have an account ? <a href="/auth/signin" class="back-login">Sign In</a></p>
+            <a href="/" class="back-home">Back Home</a>
         </div>
-    </form>
-    <div class="back">
-        <a href="/auth/signin" class="back-login">Sign In</a>
-        <a href="/" class="back-home">Home</a>
     </div>
-
-<%- include('template/footer') %> 
