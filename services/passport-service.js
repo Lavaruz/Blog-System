@@ -46,8 +46,8 @@ passport.use(new GoogleStrategy({
 passport.use(new LocalStrategy(
     async function(username, password, done) {
         const User = await userModel.findOne({ name: username });
-        if (!User.password){
-            done(null, false, {message: 'username not found !'});
+        if (!User){
+            done(null, false);
         } 
         try{
             if(await bcrypt.compare(password, User.password)){

@@ -1,10 +1,5 @@
-body{
+.main-post{
     padding: 3% 25%;
-}
-
-.head{
-    display: flex;
-    justify-content: center;
 }
 
 .mksa{
@@ -15,4 +10,32 @@ body{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+.title-content{
+    width: 100%;
+    padding: 1rem;
+    font-size: 2.7rem;
+    font-weight: 500;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+.textarea-content, .textarea-mksa{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    resize: none;
+    overflow: hidden;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+.button-content{
+    padding: .5rem 1.5rem;
+    margin: 3rem 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
 }

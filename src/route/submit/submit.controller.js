@@ -1,7 +1,9 @@
 const {addNewNews} = require('../../model/submit.model')
 
 function getSubmit(req,res){
-    res.render('submit')
+    res.render('submit',{
+        user: req.user
+    })
 }
 
 async function postSubmit(req,res){

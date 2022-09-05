@@ -12,7 +12,6 @@ const authRouter = express.Router()
 authRouter.get('/signin',getSignIn)
 authRouter.post('/signin',passport.authenticate('local', {
     failureRedirect: '/auth/signin',
-    failureFlash: true,
     successRedirect: '/'
 }))
 
