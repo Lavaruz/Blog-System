@@ -1,0 +1,87 @@
+<%- include('template/header') %> 
+<link rel="stylesheet" href="/css/home-auth.css">
+
+<div class="main">
+    <div class="news">
+        <div class="blog">
+            <a href="/submit">
+                <div class="title-auth">
+                    <i class="uil uil-pen icon-write"></i>
+                    <h5>Create post</h5>
+                </div>
+            </a>
+            <h3>>>> Recent News</h3>
+            <% news.forEach(doc=>{ %>
+                    <div class="blog-card">
+                        <div class="blog-main">
+                            <div class="blog-autor-info">
+                                <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
+                                <p class="autor-card"> <%= doc.autor.name %> </p>
+                            </div>
+                            <a href="blog/<%= doc._id %> ">
+                                <div class="content">
+                                    <h3 class="title-card"><%= doc.title %> </h3>
+                                    <p class="content-card"><%= doc.mksa %></p>
+                                </div>
+                            </a>
+                            <div class="info-card">
+                                <p class="date-card"><%= doc.date %></p>
+                            </div>
+                            <!-- <button class="delete-card">X</button> -->
+                        </div>
+                        <a href="blog/<%= doc._id %> ">
+                            <div class="blog-img">
+                                <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="180px" height="180px">
+                            </div>
+                        </a>
+                    </div>
+            <% }) %> 
+        </div>
+        <div class="profile-info">
+            <div class="profile-sticky">
+                <div class="profile-account">
+                    <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="150px" height="150px" style="border-radius: 100%;">
+                    <h3 class="profile-name"><%= user.name %> </h3>
+                    <p class="profile-desc">No description</p>
+                    <div class="profile-setting">
+                        <a href="#" title="not function yet"><button>Edit Profile</button></a>
+                        <!-- <a href=""><button>Logout</button></a> -->
+                    </div>
+                </div>
+                <hr>
+                <h4>>>> Your Post</h4>
+                <div class="more-news">
+                    <% if(docByAutor.length == 0){ %>
+                        <p class="no-post">you're not posted yet. Let's create post <a href="/submit">here</a></p>
+                    <% } %> 
+                    <% docByAutor.forEach(doc=>{ %>
+                        <div class="blog-card">
+                            <div class="blog-main">
+                                <div class="blog-autor-info">
+                                    <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
+                                    <p class="autor-card"> <%= doc.autor.name %> </p>
+                                </div>
+                                <a href="blog/<%= doc._id %> ">
+                                    <div class="content">
+                                        <h3 class="title-card-autor"><%= doc.title %> </h3>
+                                    </div>
+                                </a>
+                                <div class="info-card">
+                                    <p class="date-card"><%= doc.date %></p>
+                                </div>
+                            </div>
+                            <a href="blog/<%= doc._id %> ">
+                                <div class="blog-img">
+                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="100px" height="100px">
+                                </div>
+                            </a>
+                        </div>
+                <% }) %> 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<%- include('template/footer') %> 

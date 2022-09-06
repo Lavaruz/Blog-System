@@ -2,40 +2,51 @@
     padding: 3% 25%;
 }
 
-.mksa{
-    margin: 25px 0;
-}
-
-.mksa-label{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
 .title-content{
     width: 100%;
-    padding: 1rem;
+    padding: .8rem 1rem;
     font-size: 2.7rem;
     font-weight: 500;
     border: none;
     font-family: 'Times New Roman', Times, serif;
+    height: 40px;
+    resize: none;
+    overflow: hidden;
 }
 .textarea-content, .textarea-mksa{
     width: 100%;
-    padding: 1rem;
+    padding: .8rem 1rem;
     font-size: 1.6rem;
     border: none;
     font-family: 'Times New Roman', Times, serif;
     resize: none;
     overflow: hidden;
+    line-height: 150%;
+}
+.textarea-mksa{
+    margin: 3rem 0;
 }
 textarea:focus, input:focus{
     outline: none;
 }
 .button-content{
     padding: .5rem 1.5rem;
-    margin: 3rem 1rem;
+    margin: .5rem 1rem;
     background-color: black;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
+}
+::-webkit-file-upload-button {
+    padding: .5rem 1.5rem;
+    margin: 1rem;
+    background-color: transparent;
+    color: black;
+    transition: .3s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+::-webkit-file-upload-button:hover{
+    background-color: black;
+    color: white;
 }

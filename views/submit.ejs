@@ -6,13 +6,13 @@
         <div class="main-post">
             <form action="/submit" method="post" enctype="multipart/form-data">
                 
-                <input type="text" class="title-content" id="title" name="title" placeholder="Title" pattern=".{5,}" required title="5 characters minimum">
+                <textarea type="text" class="title-content" id="title" name="title" placeholder="Title" pattern=".{5,}" required title="5 characters minimum" oninput="auto_grow(this)"></textarea>
             
                 <textarea oninput="auto_grow(this)" class="textarea-content" id="content" name="content" placeholder="Tell your story" pattern=".{20,}"   required title="20 characters minimum"></textarea>
 
-                <!-- <textarea class="textarea-mksa" id="mksa" name="mksa" placeholder="MK;SA"></textarea>
+                <textarea class="textarea-mksa" id="mksa" name="mksa" placeholder="MK;SA" pattern=".{10,}" required title="10 characters minimum"></textarea>
             
-                <input type="file" name="image"> -->
+                <input class="image-content" type="file" name="image"><br>
                 <button type="submit" class="button-content">Publish</button>
                 
             </form>

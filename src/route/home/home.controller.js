@@ -21,8 +21,8 @@ async function getHome(req,res){
 
 function logout(req,res){
     req.logout()
+    req.session = null
     res.redirect('/')
-    
 }
 
 module.exports = {

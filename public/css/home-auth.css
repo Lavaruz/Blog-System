@@ -1,0 +1,58 @@
+.title-auth{
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
+.title-auth h5{
+    margin: 1.3rem 0;
+}
+
+.profile-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid rgb(201, 201, 201); */
+    /* border-width: 0 0 0 1px; */
+    /* margin: 2rem 0; */
+}
+.profile-sticky{
+    position: sticky;
+    top: 2rem;
+}
+.profile-info .profile-name{
+    margin: 1rem 0 .5rem;
+}
+.profile-info .profile-desc{
+    color: rgb(153, 153, 153);
+    font-size: .95rem;
+    margin: 0;
+}
+.profile-info .profile-setting{
+    margin: 2rem 0;
+}
+.profile-info .profile-setting button{
+    padding: .5rem 1rem;
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgb(153, 153, 153);;
+    border-radius: 5px;
+    transition: .3s;
+    cursor:pointer;
+}
+.profile-info .profile-setting button:hover{
+    background-color: black;
+    color: white;
+}
+
+.no-post{
+    color: rgb(175, 175, 175);
+}

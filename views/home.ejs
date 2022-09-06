@@ -1,18 +1,10 @@
 <%- include('template/header') %> 
 
-<% if(!user){ %> 
     <div class="main-signin">
         <h1>Stay curious.</h1>
         <p>Ingin menulis beritamu sendiri?,<br>mari daftarkan diri untuk menerbitkan berita kerenmu</p>
         <a href="/auth/signin"><button class="button-signin">Start writing</button></a>
     </div>
-<% }else{ %> 
-    <div class="main-signin">
-        <h2>Welcome Back <%= user.name %> </h2>
-        <p>Now you can create your own news</p>
-        <a href="/submit"><button>Create News</button></a>
-    </div>
-<% } %> 
     <div class="main">
 
         <div class="title">
@@ -24,7 +16,10 @@
                 <% news.forEach(doc=>{ %>
                         <div class="blog-card">
                             <div class="blog-main">
-                                <p class="autor-card">Created by: <%= doc.autor.name %> </p>
+                                <div class="blog-autor-info">
+                                    <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
+                                    <p class="autor-card"> <%= doc.autor.name %> </p>
+                                </div>
                                 <a href="blog/<%= doc._id %> ">
                                     <div class="content">
                                         <h3 class="title-card"><%= doc.title %> </h3>

@@ -5,7 +5,7 @@
         <div class="article">
             <div class="head">
                 <div class="head-info">
-                    <img src="<%= doc.autor.image %>" alt="" width="40px">
+                    <img src="<%= doc.autor.image %>" alt="" width="40px" height="40px" onerror=this.src="/img/noprofile.jpg">
                     <div class="head-info-data">
                         <p class="head-autor">Created by: <%= doc.autor.name %></p>
                         <p class="head-date"><%= doc.date %></p>
@@ -30,11 +30,11 @@
         <div class="autor">
             <div class="autor-info">
                 <div class="autor-profile">
-                    <img src="<%= doc.autor.image %>" alt="" width="150px">
+                    <img src="<%= doc.autor.image %>" alt="" width="100px" height="100px" onerror=this.src="/img/noprofile.jpg">
                     <h3><%= doc.autor.name %> </h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque et, laboriosam minima qui </p>
-                    <form action="" method="post">
-                        <button>Follow</button>
+                    <form action="#" method="post">
+                        <button class="autor-follow-button">Follow</button>
                     </form>
                 </div>
                 <!-- <div class="autor-more">
