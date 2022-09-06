@@ -12,6 +12,8 @@
 }
 .article-img{
     display: block;
+    width: 80%;
+    object-fit: cover;
     margin: 2rem auto;
 }
 .head .head-info{
@@ -86,4 +88,19 @@
     color: white;
     border: none;
     border-radius: 3px;
+}
+.autor-image{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* BLOG */
+.blog-img-autor img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.info-card .date-card{
+    margin: .5rem 0;
 }

@@ -1,8 +1,9 @@
 <%- include('template/header') %> 
-
-    <link rel="stylesheet" href="/css/blog.css">
+<link rel="stylesheet" href="/css/blog.css">
+<link rel="stylesheet" href="/css/blog-responsive.css">
     <div class="main-blog">
         <div class="article">
+            <!-- NEWS INFO -->
             <div class="head">
                 <div class="head-info">
                     <img src="<%= doc.autor.image %>" alt="" width="40px" height="40px" onerror=this.src="/img/noprofile.jpg">
@@ -13,10 +14,12 @@
                 </div>
                 <h1 class="head-title"><%= doc.title %></h1>
             </div>
-            <img class="article-img" src="/img/<%= doc.image.filename %>" alt="" width="80%" style="object-fit:cover ;">
+            <!-- NEWS IMAGE -->
+            <img class="article-img" src="/img/<%= doc.image.filename %>" alt="">
+            <!-- NEWS MAIN CONTENT -->
             <div class="content">
                 <div class="content-mksa">
-                    <h4>MK;SA <br> (Males Kepanjangan Singkat Aja)</h4>
+                    <h4>MK;SA</h4>
                     <p>"<%= doc.mksa %>"</p>
                 </div>
                 <div class="content-main">
@@ -30,7 +33,7 @@
         <div class="autor">
             <div class="autor-info">
                 <div class="autor-profile">
-                    <img src="<%= doc.autor.image %>" alt="" width="100px" height="100px" onerror=this.src="/img/noprofile.jpg">
+                    <img class="autor-image" src="<%= doc.autor.image %>" alt="" onerror=this.src="/img/noprofile.jpg">
                     <h3><%= doc.autor.name %> </h3>
                     <p>No description yet </p>
                     <form action="" method="">
@@ -55,10 +58,13 @@
                                         <h3 class="title-card-autor" style="margin:0 ;"><%= doc.title %> </h3>
                                     </div>
                                 </a>
+                                <div class="info-card">
+                                    <p class="date-card"><%= doc.date %></p>
+                                </div>
                             </div>
                             <a href="/blog/<%= doc._id %> ">
-                                <div class="blog-img">
-                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="80" height="80" style="object-fit:cover ;">
+                                <div class="blog-img-autor">
+                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg">
                                 </div>
                             </a>
                         </div>

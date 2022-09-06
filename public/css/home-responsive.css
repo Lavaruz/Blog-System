@@ -1,0 +1,40 @@
+@media only screen and (max-width: 600px) {
+    /* MAIN SIGNIN */
+    .main-signin{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    .main-signin h1{
+        font-size: 3.5rem;
+    }
+    .main-signin p{
+        font-size: 1.2rem;
+    }
+    .main-signin a button{
+        font-size: .8rem;
+        margin: 1.2rem 0;
+        padding: .6rem 1.2rem;
+        border-radius: 5px;
+    }
+
+    /* NEWS */
+    .news{
+        display: block;
+    }
+    .content .title-card{
+        font-size: 1rem;
+        margin: .5rem 0;
+    }
+    .content .content-card{
+        display: none;
+    }
+    .blog-img img{
+        width: 100px;
+        height: 100px;
+    }
+
+    /* DISCOVER */
+    .discover{
+        display: none;
+    }
+  }

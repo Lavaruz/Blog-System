@@ -1,0 +1,49 @@
+@media only screen and (max-width: 600px) {
+    .main-blog{
+        display: block;
+    }
+    /* NEWS HEAD */
+    .article{
+        padding: 5%;
+    }
+    .article .head-title{
+        font-size: 2rem;
+    }
+    .article-img{
+        width: 100%;
+    }
+
+    /* CONTENT */
+    .content-mksa h4{
+        content: "MK;SA";
+        font-size: 1.5rem;
+    }
+    .content-mksa p{
+        font-size: 1rem;
+    }
+    .content-main p{
+        font-size: 1.3rem;
+    }
+
+    /* AUTOR */
+    .autor{
+        padding: 5%;
+        padding-top: 0;
+    }
+    .autor-profile{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .autor-image{
+        margin: auto;
+    }
+
+    /* BLOG AUTOR */
+    .blog-img{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+  }

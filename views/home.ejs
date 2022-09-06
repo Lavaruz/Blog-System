@@ -1,4 +1,5 @@
 <%- include('template/header') %> 
+<link rel="stylesheet" href="/css/home-responsive.css">
 
     <div class="main-signin">
         <h1>Stay curious.</h1>
@@ -16,24 +17,27 @@
                 <% news.forEach(doc=>{ %>
                         <div class="blog-card">
                             <div class="blog-main">
+                                <!-- AUTOR INFO -->
                                 <div class="blog-autor-info">
                                     <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
                                     <p class="autor-card"> <%= doc.autor.name %> </p>
                                 </div>
+                                <!-- NEWS CONTENT -->
                                 <a href="/blog/<%= doc._id %> ">
                                     <div class="content">
                                         <h3 class="title-card"><%= doc.title %> </h3>
                                         <p class="content-card"><%= doc.mksa %></p>
                                     </div>
                                 </a>
+                                <!-- NEWS INFO -->
                                 <div class="info-card">
                                     <p class="date-card"><%= doc.date %></p>
                                 </div>
-                                <!-- <button class="delete-card">X</button> -->
                             </div>
+                            <!-- NEWS IMAGE -->
                             <a href="/blog/<%= doc._id %> ">
                                 <div class="blog-img">
-                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="180px" height="180px" style="object-fit: cover;">
+                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg">
                                 </div>
                             </a>
                         </div>

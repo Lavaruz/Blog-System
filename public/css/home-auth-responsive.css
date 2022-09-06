@@ -1,0 +1,23 @@
+@media only screen and (max-width: 600px) {
+    .news{
+        display: block;
+    }
+
+    /* CONTENT */
+    .content .title-card{
+        font-size: 1rem;
+    }
+    .content .content-card{
+        display: none;
+    }
+
+    /* PROFILE INFO */
+    .profile-info{
+        display: none;
+    }
+    .blog-img-main img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+}

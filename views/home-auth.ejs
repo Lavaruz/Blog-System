@@ -1,5 +1,6 @@
 <%- include('template/header') %> 
 <link rel="stylesheet" href="/css/home-auth.css">
+<link rel="stylesheet" href="/css/home-auth-responsive.css">
 
 <div class="main">
     <div class="news">
@@ -14,23 +15,26 @@
             <% news.forEach(doc=>{ %>
                     <div class="blog-card">
                         <div class="blog-main">
+                            <!-- AUTOR INFO -->
                             <div class="blog-autor-info">
                                 <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;object-fit:cover ;">
                                 <p class="autor-card"> <%= doc.autor.name %> </p>
                             </div>
+                            <!-- CONTENT MAIN -->
                             <a href="/blog/<%= doc._id %> ">
                                 <div class="content">
                                     <h3 class="title-card"><%= doc.title %> </h3>
                                     <p class="content-card"><%= doc.mksa %></p>
                                 </div>
                             </a>
+                            <!-- CONTENT INFO -->
                             <div class="info-card">
                                 <p class="date-card"><%= doc.date %></p>
                             </div>
-                            <!-- <button class="delete-card">X</button> -->
                         </div>
+                        <!-- CONTENT IMAGE -->
                         <a href="/blog/<%= doc._id %> ">
-                            <div class="blog-img">
+                            <div class="blog-img-main">
                                 <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="180" height="180" style="object-fit:cover ;">
                             </div>
                         </a>
@@ -71,7 +75,7 @@
                                 </div>
                             </div>
                             <a href="blog/<%= doc._id %> ">
-                                <div class="blog-img">
+                                <div class="blog-img-profile">
                                     <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="100px" height="100px" style="object-fit:cover ;">
                                 </div>
                             </a>

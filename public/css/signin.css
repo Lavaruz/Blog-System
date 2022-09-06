@@ -88,5 +88,6 @@ input[type=text], input[type=password] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     /* gap: 30px; */
 }

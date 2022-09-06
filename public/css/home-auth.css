@@ -53,6 +53,12 @@
     color: white;
 }
 
+.blog-img-profile img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 .no-post{
     color: rgb(175, 175, 175);
 }

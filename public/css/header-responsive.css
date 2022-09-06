@@ -1,0 +1,15 @@
+@media only screen and (max-width: 600px) {
+    .nav-title{
+        font-size: 1rem;
+    }
+    .nav-signin{
+        padding: .4rem .8rem;
+        background-color: transparent;
+        color: black;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: .3s;
+        border: 1px solid black;
+        font-size: .8rem;
+    }
+  }

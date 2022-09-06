@@ -115,6 +115,11 @@ a{
     align-items: center;
     margin: .5rem 0;
 }
+.blog-img img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
 .autor-card{
     font-size: .8rem;
     margin: 0 .5rem;
@@ -124,12 +129,11 @@ a{
     position: relative;
     display: grid;
     grid-template-columns: 1fr max-content;
+    align-items: center;
     gap: 1.5rem;
 }
-.blog-img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.blog-img img{
+    
 }
 .blog-main{
     display: flex;

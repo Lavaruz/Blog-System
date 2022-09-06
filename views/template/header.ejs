@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/header-responsive.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Blog System</title>
 </head>
 <body>
     <div class="nav">
         <div class="header">
-            <a href="/"><h2>Lavaruz Blog</h2></a>
+            <a href="/"><h2 class="nav-title">Lavaruz Blog</h2></a>
             <% if(!user){ %> 
                 <a href="/auth/signin">
                     <button class="nav-signin">Get started</button>

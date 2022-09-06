@@ -1,0 +1,10 @@
+@media only screen and (max-width: 600px) {
+    .main{
+        margin: 0 2%;
+        /* height: 90vh; */
+    }
+    
+    .back{
+        gap: 1rem;
+    }
+}
