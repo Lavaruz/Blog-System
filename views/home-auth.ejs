@@ -15,10 +15,10 @@
                     <div class="blog-card">
                         <div class="blog-main">
                             <div class="blog-autor-info">
-                                <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
+                                <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;object-fit:cover ;">
                                 <p class="autor-card"> <%= doc.autor.name %> </p>
                             </div>
-                            <a href="blog/<%= doc._id %> ">
+                            <a href="/blog/<%= doc._id %> ">
                                 <div class="content">
                                     <h3 class="title-card"><%= doc.title %> </h3>
                                     <p class="content-card"><%= doc.mksa %></p>
@@ -29,9 +29,9 @@
                             </div>
                             <!-- <button class="delete-card">X</button> -->
                         </div>
-                        <a href="blog/<%= doc._id %> ">
+                        <a href="/blog/<%= doc._id %> ">
                             <div class="blog-img">
-                                <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="180" height="180">
+                                <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="180" height="180" style="object-fit:cover ;">
                             </div>
                         </a>
                     </div>
@@ -40,7 +40,7 @@
         <div class="profile-info">
             <div class="profile-sticky">
                 <div class="profile-account">
-                    <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="150px" height="150px" style="border-radius: 100%;">
+                    <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="150px" height="150px" style="border-radius: 100%; object-fit: cover;">
                     <h3 class="profile-name"><%= user.name %> </h3>
                     <p class="profile-desc">No description</p>
                     <div class="profile-setting">
@@ -58,7 +58,7 @@
                         <div class="blog-card">
                             <div class="blog-main">
                                 <div class="blog-autor-info">
-                                    <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
+                                    <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%; object-fit: cover;">
                                     <p class="autor-card"> <%= doc.autor.name %> </p>
                                 </div>
                                 <a href="blog/<%= doc._id %> ">
@@ -72,7 +72,7 @@
                             </div>
                             <a href="blog/<%= doc._id %> ">
                                 <div class="blog-img">
-                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="100px" height="100px">
+                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="100px" height="100px" style="object-fit:cover ;">
                                 </div>
                             </a>
                         </div>

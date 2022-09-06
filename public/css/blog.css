@@ -17,6 +17,7 @@
 .head .head-info{
     display: flex;
     gap: .5rem;
+    margin: .5rem 0 2rem;
 }
 .head .head-info img{
     border-radius: 100%;

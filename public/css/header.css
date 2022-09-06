@@ -99,7 +99,10 @@ a{
     border: 1px solid rgb(87, 87, 87);
     margin: 2px 0rem;
 }
-
+.discover-sticky{
+    position: sticky;
+    top: 2rem;
+}
 
 /* BLOG */
 

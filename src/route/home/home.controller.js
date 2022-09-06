@@ -3,7 +3,6 @@ const {getAllDocs, getDocByAutor} = require('../../model/home.model')
 async function getHome(req,res){
     const docs = await getAllDocs();
     const docByAutor = await getDocByAutor(req.user);
-    console.log(docByAutor);
     if(!req.user){
         res.render('home', {
             news: docs,

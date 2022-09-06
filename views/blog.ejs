@@ -13,7 +13,7 @@
                 </div>
                 <h1 class="head-title"><%= doc.title %></h1>
             </div>
-            <img class="article-img" src="/img/<%= doc.image.filename %>" alt="" width="80%">
+            <img class="article-img" src="/img/<%= doc.image.filename %>" alt="" width="80%" style="object-fit:cover ;">
             <div class="content">
                 <div class="content-mksa">
                     <h4>MK;SA <br> (Males Kepanjangan Singkat Aja)</h4>
@@ -32,8 +32,8 @@
                 <div class="autor-profile">
                     <img src="<%= doc.autor.image %>" alt="" width="100px" height="100px" onerror=this.src="/img/noprofile.jpg">
                     <h3><%= doc.autor.name %> </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque et, laboriosam minima qui </p>
-                    <form action="#" method="post">
+                    <p>No description yet </p>
+                    <form action="" method="">
                         <button class="autor-follow-button">Follow</button>
                     </form>
                 </div>
@@ -47,18 +47,18 @@
                         <div class="blog-card">
                             <div class="blog-main">
                                 <div class="blog-autor-info">
-                                    <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
+                                    <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%; object-fit:cover ;">
                                     <p class="autor-card"> <%= doc.autor.name %> </p>
                                 </div>
-                                <a href="blog/<%= doc._id %> ">
+                                <a href="/blog/<%= doc._id %> ">
                                     <div class="content">
-                                        <h4 class="title-card-autor" style="margin:0 ;"><%= doc.title %> </h4>
+                                        <h3 class="title-card-autor" style="margin:0 ;"><%= doc.title %> </h3>
                                     </div>
                                 </a>
                             </div>
-                            <a href="blog/<%= doc._id %> ">
+                            <a href="/blog/<%= doc._id %> ">
                                 <div class="blog-img">
-                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="80" height="80">
+                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="80" height="80" style="object-fit:cover ;">
                                 </div>
                             </a>
                         </div>
