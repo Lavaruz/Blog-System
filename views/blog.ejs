@@ -37,17 +37,33 @@
                         <button class="autor-follow-button">Follow</button>
                     </form>
                 </div>
-                <!-- <div class="autor-more">
-                    <h5>More Article</h5>
-                    <div class="autor-more-news">
-                        <% docs.forEach(docc => { %>
-                            <div class="more-news-info">
-                                <h5><%= docc.title %> </h5>
+                <hr>
+                <div class="more-news">
+                    <h4>More From <%= doc.autor.name %> </h4>
+                    <% if(docByAutor.length == 0){ %>
+                        <p class="no-post">you're not posted yet. Let's create post <a href="/submit">here</a></p>
+                    <% } %> 
+                    <% docByAutor.forEach(doc=>{ %>
+                        <div class="blog-card">
+                            <div class="blog-main">
+                                <div class="blog-autor-info">
+                                    <img src="<%= doc.autor.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="20px" height="20px" style="border-radius: 100%;">
+                                    <p class="autor-card"> <%= doc.autor.name %> </p>
+                                </div>
+                                <a href="blog/<%= doc._id %> ">
+                                    <div class="content">
+                                        <h4 class="title-card-autor" style="margin:0 ;"><%= doc.title %> </h4>
+                                    </div>
+                                </a>
                             </div>
-                            <img src="/img/<%= docc.image.filename %> " alt="" onerror=this.src="/img/noimg.jpg" width="150">
-                        <%}) %> 
-                    </div>
-                </div> -->
+                            <a href="blog/<%= doc._id %> ">
+                                <div class="blog-img">
+                                    <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="80" height="80">
+                                </div>
+                            </a>
+                        </div>
+                <% }) %> 
+                </div>
             </div>
         </div>
     </div>
