@@ -29,6 +29,10 @@ const submitSchema = new mongoose.Schema({
     image:{
         type:mongoose.SchemaTypes.Mixed,
         default: ""
+    },
+    topic:{
+        type: [String],
+        default: []
     }
 })
 

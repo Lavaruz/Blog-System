@@ -15,6 +15,7 @@ const {blogRouter} = require('./src/route/blog/blog.route')
 const {authRouter} = require('./src/route/auth/auth.route')
 const {databaseConnect} = require('./services/mongo')
 
+const {newsRouter} = require('./src/route/v1/news')
 
 let COOKIES_KEY1= process.env.COOKIES_KEY1
 let COOKIES_KEY2= process.env.COOKIES_KEY2
@@ -48,7 +49,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs')
 
-
+app.use('/api/v1', newsRouter)
 app.use('/', homeRouter)
 app.use('/submit', submitRouter)
 app.use('/blog', blogRouter)

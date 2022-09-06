@@ -1,0 +1,5 @@
+GET http://localhost:3000/api/v1
+
+###
+
+GET http://localhost:3000/api/v1/631739d124d76c3377d435a1
