@@ -7,6 +7,10 @@ function getSubmit(req,res){
 }
 
 async function postSubmit(req,res){
+    // const user = Object.fromEntries(
+    //     Object.entries(req.user._doc).filter(([key, value]) => key !== 'password'))
+    // console.log(user);
+
     const body = req.body
     body.autor = req.user
     body.image = req.file

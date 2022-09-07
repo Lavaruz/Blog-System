@@ -3,13 +3,15 @@
     gap: .8rem;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(170, 170, 170);
     border-radius: 5px;
     color: white;
     background-color: black;
     font-size: 1.3rem;
-    text-transform: uppercase;
-    margin: 1rem 0;
+    margin: 1rem 0 3rem;
+}
+.a-title-auth{
+    width: 100%;
+    height: max-content;
 }
 .title-auth h5{
     margin: 1.3rem 0;
@@ -61,4 +63,8 @@
 
 .no-post{
     color: rgb(175, 175, 175);
+}
+
+.news-type{
+    margin: 4rem 0 2rem;
 }

@@ -4,14 +4,14 @@
 
 <div class="main">
     <div class="news">
-        <div class="blog">
-            <a href="/submit">
+        <div class="blog-auth">
+            <a class="a-title-auth" href="/submit">
                 <div class="title-auth">
                     <i class="uil uil-pen icon-write"></i>
                     <h5>Create post</h5>
                 </div>
             </a>
-            <h3>>>> Recent News</h3>
+            <h3 class="news-type">>>> Recent News</h3>
             <% news.forEach(doc=>{ %>
                     <div class="blog-card">
                         <div class="blog-main">
@@ -46,7 +46,7 @@
                 <div class="profile-account">
                     <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="150px" height="150px" style="border-radius: 100%; object-fit: cover;">
                     <h3 class="profile-name"><%= user.name %> </h3>
-                    <p class="profile-desc">No description</p>
+                    <p class="profile-desc"><%= user.description %> </p>
                     <div class="profile-setting">
                         <a href="#" title="not function yet"><button disabled title="not ready yet">Edit Profile</button></a>
                         <!-- <a href=""><button>Logout</button></a> -->
