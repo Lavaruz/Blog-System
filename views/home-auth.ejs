@@ -24,7 +24,7 @@
                             <a href="/blog/<%= doc._id %> ">
                                 <div class="content">
                                     <h3 class="title-card"><%= doc.title %> </h3>
-                                    <p class="content-card"><%= doc.mksa %></p>
+                                    <p class="content-card"><%= doc.mksa.substring(0,180) %> ...</p>
                                 </div>
                             </a>
                             <!-- CONTENT INFO -->
@@ -35,7 +35,7 @@
                         <!-- CONTENT IMAGE -->
                         <a href="/blog/<%= doc._id %> ">
                             <div class="blog-img-main">
-                                <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="180" height="180" style="object-fit:cover ;">
+                                <img src="/img/<%= doc.image.filename %>" alt="" onerror=this.src="/img/noimg.jpg" width="200" height="150" style="object-fit:cover ;">
                             </div>
                         </a>
                     </div>
@@ -46,6 +46,10 @@
                 <div class="profile-account">
                     <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="150px" height="150px" style="border-radius: 100%; object-fit: cover;">
                     <h3 class="profile-name"><%= user.name %> </h3>
+                    <div class="profile-follow">
+                        <a href="#">Followers: <%=user.follower%></a>
+                        <a href="#">Following: <%=user.follower%></a>
+                    </div>
                     <p class="profile-desc"><%= user.description %> </p>
                     <div class="profile-setting">
                         <a href="/account/edit"><button>Edit Profile</button></a>

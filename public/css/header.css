@@ -140,9 +140,6 @@ a{
     align-items: center;
     gap: 1.5rem;
 }
-.blog-img img{
-    
-}
 .blog-main{
     display: flex;
     flex-direction: column;

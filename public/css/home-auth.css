@@ -54,6 +54,14 @@
     background-color: black;
     color: white;
 }
+.profile-follow{
+    display: flex;
+    gap: 1rem;
+}
+.profile-follow a{
+    font-size: .9rem;
+    margin: 0 0 1.5rem;
+}
 
 .blog-img-profile img{
     width: 100px;
