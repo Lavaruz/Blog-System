@@ -13,6 +13,7 @@ const {submitRouter} = require('./src/route/submit/submit.route')
 const {homeRouter} = require('./src/route/home/home.route')
 const {blogRouter} = require('./src/route/blog/blog.route')
 const {authRouter} = require('./src/route/auth/auth.route')
+const {editRouter} = require('./src/route/profile-edit/profile-edit')
 const {databaseConnect} = require('./services/mongo')
 
 const {newsRouter} = require('./src/route/v1/news')
@@ -54,6 +55,7 @@ app.use('/', homeRouter)
 app.use('/submit', submitRouter)
 app.use('/blog', blogRouter)
 app.use('/auth', authRouter)
+app.use('/account', editRouter)
 
 
 let port = process.env.PORT;

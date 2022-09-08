@@ -1,0 +1,50 @@
+.edit-profile{
+    margin: 2rem 30%;
+    border: 1px solid black;
+    padding: 2rem;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, .5);
+    border-radius: 3px;
+}
+
+.edit-photo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 2rem;
+}
+.edit-name h3{
+    margin: .5rem 0;
+} 
+
+.edit-name a{
+    color: rgb(0, 149, 198);
+    font-weight: bold;
+    font-size: .95rem;
+}
+
+.edit-form{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+.edit-form input{
+    padding: .3rem;
+}
+.edit-desc{
+    /* width: 100%; */
+    padding: .3rem;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.33px;
+}
+
+.edit-form button{
+    margin: 1rem 0;
+    padding: .8rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

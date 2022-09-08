@@ -1,0 +1,28 @@
+<%- include('template/header') %> 
+<link rel="stylesheet" href="/css/profile-edit.css">
+    
+<div class="edit-profile">
+    <div class="edit-photo">
+        <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="60" height="60" style="border-radius: 100%; object-fit: cover;">
+        <div class="edit-name">
+            <h3><%= user.name %> </h3>
+            <a href="#">Change profile photo</a>
+        </div>
+    </div>
+    
+    <form action="/account/edit" method="post">
+        <div class="edit-form">
+            <label for="username">Username</label>
+            <input type="text" name="name" id="username" required value="<%= user.name %>">
+            
+            <label for="description">Description</label>
+            <textarea name="description" id="description" rows="3" class="edit-desc" maxlength="100"><%= user.description %></textarea>
+            
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= user.email %>">
+
+            <span></span>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>

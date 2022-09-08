@@ -35,7 +35,7 @@
                 <div class="autor-profile">
                     <img class="autor-image" src="<%= doc.autor.image %>" alt="" onerror=this.src="/img/noprofile.jpg">
                     <h3><%= doc.autor.name %> </h3>
-                    <p>No description yet </p>
+                    <p><%=doc.autor.description%></p>
                     <form action="" method="">
                         <button class="autor-follow-button" disabled title="not ready yet">Follow</button>
                     </form>
@@ -44,7 +44,7 @@
                 <div class="more-news">
                     <h4>More From <%= doc.autor.name %> </h4>
                     <% if(docByAutor.length == 0){ %>
-                        <p class="no-post">you're not posted yet. Let's create post <a href="/submit">here</a></p>
+                        <p class="no-post">No other news</p>
                     <% } %> 
                     <% docByAutor.forEach(doc=>{ %>
                         <div class="blog-card">
