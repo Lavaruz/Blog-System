@@ -15,7 +15,7 @@
                 <h1 class="head-title"><%= doc.title %></h1>
             </div>
             <!-- NEWS IMAGE -->
-            <img class="article-img" src="/img/<%= doc.image.filename %>" alt="">
+            <img class="article-img" src="/img/<%= doc.image.filename %>" alt="" >
             <!-- NEWS MAIN CONTENT -->
             <div class="content">
                 <div class="content-mksa">
@@ -36,8 +36,8 @@
                     <img class="autor-image" src="<%= doc.autor.image %>" alt="" onerror=this.src="/img/noprofile.jpg">
                     <h3><%= doc.autor.name %> </h3>
                     <p><%=doc.autor.description%></p>
-                    <form action="" method="">
-                        <button class="autor-follow-button" disabled title="not ready yet">Follow</button>
+                    <form action="/blog" method="post">
+                        <button type="submit" class="autor-follow-button" disabled>Follow</button>
                     </form>
                 </div>
                 <hr>

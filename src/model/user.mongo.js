@@ -20,8 +20,14 @@ const userSchema = new mongoose.Schema({
         default: 'No description'
     },
     follower: {
-        type: Number,
-        default: 0
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'User',
+        default: []
+    },
+    following: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'User',
+        default: []
     }
 })
 

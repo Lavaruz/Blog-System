@@ -14,7 +14,6 @@ editRouter.post('/edit', async(req,res)=> {
     User.name = req.body.name
     User.description = req.body.description
     User.email = req.body.email
-    console.log(User);
     await User.save()
     res.redirect('/')
 })

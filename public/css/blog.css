@@ -88,6 +88,7 @@
     color: white;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
 }
 .autor-image{
     width: 100px;

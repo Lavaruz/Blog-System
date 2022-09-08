@@ -21,7 +21,7 @@
                                 <p class="autor-card"> <%= doc.autor.name %> </p>
                             </div>
                             <!-- CONTENT MAIN -->
-                            <a href="/blog/<%= doc._id %> ">
+                            <a href="/blog/<%= doc._id %>">
                                 <div class="content">
                                     <h3 class="title-card"><%= doc.title %> </h3>
                                     <p class="content-card"><%= doc.mksa.substring(0,180) %> ...</p>
@@ -47,8 +47,8 @@
                     <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="150px" height="150px" style="border-radius: 100%; object-fit: cover;">
                     <h3 class="profile-name"><%= user.name %> </h3>
                     <div class="profile-follow">
-                        <a href="#">Followers: <%=user.follower%></a>
-                        <a href="#">Following: <%=user.follower%></a>
+                        <a href="#">Followers: <%=user.follower.length%></a>
+                        <a href="#">Following: <%=user.following.length%></a>
                     </div>
                     <p class="profile-desc"><%= user.description %> </p>
                     <div class="profile-setting">
