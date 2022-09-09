@@ -1,15 +1,15 @@
 const newsModel = require('./news.mongo')
 
 async function getAllDocs(){
-    return await newsModel.find({}).sort('-newsId').populate('autor','name description email image follower')
+    return await newsModel.find({},'-__v').sort('-newsId').populate('autor','-googleId -password -__v')
 }
 
 async function getDocById(id){
-    return await newsModel.findById(id).populate('autor','name description email image follower')
+    return await newsModel.findById(id, '-__v').populate('autor','-googleId -password -__v')
 }
 
 async function getDocByAutor(autor){
-    return await newsModel.find({autor:autor}).populate('autor','name description email image follower')
+    return await newsModel.find({autor:autor},'-__v').populate('autor','-googleId -password -__v')
 }
 
 module.exports = {

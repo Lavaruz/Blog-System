@@ -90,6 +90,14 @@
     border-radius: 3px;
     cursor: pointer;
 }
+.autor .autor-unfollow-button{
+    padding: .7rem 1.3rem;
+    background-color: gray;
+    color: lightgray;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
 .autor-image{
     width: 100px;
     height: 100px;
