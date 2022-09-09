@@ -62,7 +62,8 @@ blogRouter.get('/:id', async(req,res)=>{
         docByAutor:docByAutor,
         user: req.user,
         content: content,
-        followButton
+        followButton,
+        docUser
     })
 })
 
