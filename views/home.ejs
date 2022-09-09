@@ -26,7 +26,7 @@
                                 <a href="/blog/<%= doc._id %> ">
                                     <div class="content">
                                         <h3 class="title-card"><%= doc.title %> </h3>
-                                        <p class="content-card"><%= doc.mksa %></p>
+                                        <p class="content-card"><%= doc.mksa.substring(0,180) %> ... %></p>
                                     </div>
                                 </a>
                                 <!-- NEWS INFO -->
