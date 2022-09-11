@@ -1,6 +1,7 @@
 <%- include('template/header') %> 
 <link rel="stylesheet" href="/css/home-auth.css">
 <link rel="stylesheet" href="/css/home-auth-responsive.css">
+<link rel="stylesheet" href="/css/follow-window.css">
 
 <div class="main">
     <div class="news">
@@ -47,8 +48,8 @@
                     <img src="<%= user.image %> " alt="" onerror=this.src="/img/noprofile.jpg" width="150px" height="150px" style="border-radius: 100%; object-fit: cover;">
                     <h3 class="profile-name"><%= user.name %> </h3>
                     <div class="profile-follow">
-                        <a href="#">Followers: <%=user.follower.length%></a>
-                        <a href="#">Following: <%=user.following.length%></a>
+                        <a href="#" id="follower-button">Followers: <%=user.follower.length%></a>
+                        <a href="#" id="following-button">Following: <%=user.following.length%></a>
                     </div>
                     <p class="profile-desc"><%= user.description %> </p>
                     <div class="profile-setting">
@@ -92,4 +93,30 @@
     </div>
 </div>
 
+<div class="follow-window">
+    <div class="follower">
+        <h4>Followers</h4>
+        <hr>
+        <% userFollower.forEach(follower => {%>
+            <div class="user-follow">
+                <img src="<%= follower.image %> " alt="" onerror=this.src="/img/noprofile.jpg">
+                <h4><%= follower.name %> </h4>
+            </div>
+        <%}) %> 
+        <p class="follow-close">X</p>
+    </div>
+    <div class="following">
+        <h4>Following</h4>
+        <hr>
+        <% userFollowing.forEach(following => {%>
+            <div class="user-follow">
+                <img src="<%= following.image %> " alt="" onerror=this.src="/img/noprofile.jpg">
+                <h4><%= following.name %> </h4>
+            </div>
+        <%}) %> 
+        <p class="follow-close">X</p>
+    </div>
+</div>
+
+<script src="/js/follow-button.js"></script>
 <%- include('template/footer') %> 

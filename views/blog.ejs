@@ -35,18 +35,21 @@
                 <div class="autor-profile">
                     <img class="autor-image" src="<%= doc.autor.image %>" alt="" onerror=this.src="/img/noprofile.jpg">
                     <h3><%= doc.autor.name %> </h3>
+                    <p class="autor-follower"><%= doc.autor.follower.length %> Followers</p>
                     <p><%=doc.autor.description%></p>
-                    <% if (docUser.id !== user.id){%>
-                        <% if(followButton){%>
-                            <form action="/blog/follow/<%= doc.id %> " method="post">
-                                <button type="submit" class="autor-follow-button">Follow</button>
-                            </form>
-                        <%} else{%>
-                            <form action="/blog/unfollow/<%= doc.id %> " method="post">
-                                <button type="submit" class="autor-unfollow-button">Unfollow</button>
-                            </form>
-                        <% } %>  
-                    <%} %> 
+                    <% if(user){ %> 
+                        <% if (docUser.id !== user.id){%>
+                            <% if(followButton){%>
+                                <form action="/blog/follow/<%= doc.id %> " method="post">
+                                    <button type="submit" class="autor-follow-button">Follow</button>
+                                </form>
+                            <%} else{%>
+                                <form action="/blog/unfollow/<%= doc.id %> " method="post">
+                                    <button type="submit" class="autor-unfollow-button">Unfollow</button>
+                                </form>
+                            <% } %>  
+                        <%} %>
+                    <%}%> 
                 </div>
                 <hr>
                 <div class="more-news">

@@ -103,6 +103,9 @@
     height: 100px;
     object-fit: cover;
 }
+.autor-follower{
+    margin: .5rem 0;
+}
 
 /* BLOG */
 .blog-img-autor img{

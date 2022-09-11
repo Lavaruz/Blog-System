@@ -50,13 +50,14 @@ blogRouter.get('/:id', async(req,res)=>{
     let content = doc.content.split('\n')
 
     const docUser = await getUserById(doc.autor.id)
-    docUser.follower.filter(follower => {
-        if(follower.equals(req.user.id)){
-            followButton = false
-        }
-    })
+    if(req.user){
+        docUser.follower.filter(follower => {
+            if(follower.equals(req.user.id)){
+                followButton = false
+            }
+        })
+    }
     
-
     res.render('blog', {
         doc: doc,
         docByAutor:docByAutor,
