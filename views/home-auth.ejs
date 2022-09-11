@@ -6,6 +6,20 @@
 <div class="main">
     <div class="news">
         <div class="blog-auth">
+            <div class="res-profile">
+                <div class="res-profile-head">
+                    <img src="<%= user.image %>" alt="" onerror=this.src="/img/noprofile.jpg">
+                    <div class="res-profile-info">
+                        <h3><%= user.name %> </h3>
+                        <div class="res-profile-follow">
+                            <p id="follower-button">Follower: <%= user.follower.length %> </p>
+                            <p id="following-button">Following: <%= user.following.length %> </p>
+                        </div>
+                        <p class="res-profile-desc"><%= user.description%></p>
+                    </div>
+                </div>
+                <a href="/account/edit"><button class="res-profile-edit">Edit profile</button></a>
+            </div>
             <a class="a-title-auth" href="/submit">
                 <div class="title-auth">
                     <i class="uil uil-pen icon-write"></i>
@@ -93,30 +107,40 @@
     </div>
 </div>
 
-<div class="follow-window">
-    <div class="follower">
-        <h4>Followers</h4>
-        <hr>
-        <% userFollower.forEach(follower => {%>
-            <div class="user-follow">
-                <img src="<%= follower.image %> " alt="" onerror=this.src="/img/noprofile.jpg">
-                <h4><%= follower.name %> </h4>
-            </div>
-        <%}) %> 
-        <p class="follow-close">X</p>
+<% if(user){ %>
+    <div class="follow-window">
+        <div class="follower">
+            <h4>Followers</h4>
+            <hr>
+            <% if (userFollower.length !== 0){ %> 
+                <% userFollower.forEach(follower => {%>
+                    <div class="user-follow">
+                        <img src="<%= follower.image %> " alt="" onerror=this.src="/img/noprofile.jpg">
+                        <h4><%= follower.name %> </h4>
+                    </div>
+                <%}) %> 
+            <% }else{ %> 
+                <p style="color: rgb(182, 182, 182); font-size:.9rem">No Follower yet</p>
+            <% } %> 
+            <p class="follow-close">X</p>
+        </div>
+        <div class="following">
+            <h4>Following</h4>
+            <hr>
+            <% if (userFollowing.length !== 0){ %> 
+                <% userFollowing.forEach(following => {%>
+                    <div class="user-follow">
+                        <img src="<%= following.image %> " alt="" onerror=this.src="/img/noprofile.jpg">
+                        <h4><%= following.name %> </h4>
+                    </div>
+                <%}) %> 
+            <% }else{ %> 
+                <p style="color: rgb(182, 182, 182); font-size:.9rem">No Follower yet</p>
+            <% } %> 
+            <p class="follow-close">X</p>
+        </div>
     </div>
-    <div class="following">
-        <h4>Following</h4>
-        <hr>
-        <% userFollowing.forEach(following => {%>
-            <div class="user-follow">
-                <img src="<%= following.image %> " alt="" onerror=this.src="/img/noprofile.jpg">
-                <h4><%= following.name %> </h4>
-            </div>
-        <%}) %> 
-        <p class="follow-close">X</p>
-    </div>
-</div>
+<% } %> 
 
 <script src="/js/follow-button.js"></script>
 <%- include('template/footer') %> 

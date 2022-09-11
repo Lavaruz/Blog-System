@@ -1,0 +1,9 @@
+@media only screen and (max-width: 600px) {
+    .edit-profile{
+        margin: 2rem 5%;
+        padding: 2rem .5rem;
+    }
+    .edit-form label{
+        font-size: .9rem;
+    }
+}

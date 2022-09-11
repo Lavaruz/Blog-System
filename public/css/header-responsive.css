@@ -12,4 +12,7 @@
         border: 1px solid black;
         font-size: .8rem;
     }
+    .nav-brand a img{
+        width: 30px;
+    }
   }

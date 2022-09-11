@@ -1,0 +1,11 @@
+@media only screen and (max-width: 600px) {
+    .main-post{
+        padding: 1rem 5%;
+    }
+    .title-content{
+        font-size: 2rem;
+    }
+    .textarea-content, .textarea-mksa{
+        font-size: 1.2rem;
+    }
+}

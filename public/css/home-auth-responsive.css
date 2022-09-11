@@ -20,4 +20,46 @@
         height: 100px;
         object-fit: cover;
     }
+
+    /* RES PROFILE */
+    .res-profile{
+        display: block;
+        margin: 1rem 0 1.5rem;
+        padding: 1rem .5rem;
+        background-color: rgb(230, 230, 230);
+        border-radius: 3px;
+    }
+    .res-profile-head{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .res-profile-head img{
+        width: 95px;
+        height: 95px;
+        object-fit: cover;
+        /* border-radius: 100%; */
+    }
+    .res-profile-info h3{
+        margin: .3rem 0;
+    }
+    .res-profile-desc{
+        font-size: .9rem;
+        color: #909090;
+    }
+    .res-profile-follow{
+        display: flex;
+        gap: 1rem;
+    }
+    .res-profile-follow p{
+        margin: 0;
+        font-size: .9rem;
+    }
+    .res-profile-edit{
+        width: 100%;
+        padding: .5rem 0;
+        background-color: transparent;
+        border: 1px solid #909090;
+        margin-top: 1rem;
+    }
 }
