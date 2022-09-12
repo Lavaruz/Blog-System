@@ -18,10 +18,12 @@
             <img class="article-img" src="/img/<%= doc.image.filename %>" alt="" >
             <!-- NEWS MAIN CONTENT -->
             <div class="content">
-                <div class="content-mksa">
-                    <h4>MK;SA</h4>
-                    <p>"<%= doc.mksa %>"</p>
-                </div>
+                <% if(doc.mksa.length !== 0){%> 
+                    <div class="content-mksa">
+                        <h4>MK;SA</h4>
+                        <p>"<%= doc.mksa %>"</p>
+                    </div>
+                <% } %> 
                 <div class="content-main">
                     <% content.forEach(line =>{ %>
                         <p><%= line %></p>

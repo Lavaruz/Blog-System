@@ -12,7 +12,7 @@ const submitSchema = new mongoose.Schema({
     },
     mksa: {
         type:String,
-        required: true
+        default: ''
     },
     autor:{ 
         type: mongoose.Schema.Types.ObjectId,
