@@ -65,7 +65,8 @@ if (port == null || port == "") {
 
 
 async function startServer(){
-    await databaseConnect()
-    app.listen(port, () => console.log(`server run at port ${port}`))
+  await databaseConnect()
+  app.listen(port, () => console.log(`server run at port ${port}`))
 }
 startServer()
+module.exports = app
